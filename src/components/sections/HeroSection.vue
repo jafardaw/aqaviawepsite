@@ -167,43 +167,78 @@ onMounted(() => {
               </div>
             </div>
 
-            <!-- Orbiting Floating Badges (Company Technologies) -->
-            <!-- 1. Flutter / Mobile Badge -->
+            <!-- Orbiting Floating Badges (Company Technologies & Specializations) -->
+            
+            <!-- 1. Top Center (12:00) - React.js -->
             <div 
-              class="absolute -top-3 -right-2 sm:-right-4 px-3 py-1.5 rounded-full bg-[#070E20]/90 border border-[#38BDF8]/40 shadow-xl backdrop-blur-md
-                     flex items-center gap-2 text-xs font-bold text-slate-200 animate-bounce duration-1000"
-              style="animation-duration: 4s;"
+              class="absolute -top-5 sm:-top-7 left-1/2 -translate-x-1/2 px-3 py-1 sm:py-1.5 rounded-full bg-[#070E20]/95 border border-[#61DAFB]/40 shadow-xl backdrop-blur-md
+                     flex items-center gap-2 text-[11px] sm:text-xs font-bold text-slate-200 hover:scale-105 transition-all duration-300 z-20"
             >
-              <div class="w-2 h-2 rounded-full bg-[#38BDF8]"></div>
-              <span>{{ t.hero.floatingBadges.mobile }}</span>
+              <div class="w-2 h-2 rounded-full bg-[#61DAFB] shadow-[0_0_8px_#61DAFB]"></div>
+              <span>{{ t.hero.floatingBadges.react }}</span>
             </div>
 
-            <!-- 2. Laravel / Backend Badge -->
+            <!-- 2. Top Right (1:30) - Flutter & Dart -->
             <div 
-              class="absolute -bottom-2 -left-2 sm:-left-4 px-3 py-1.5 rounded-full bg-[#070E20]/90 border border-[#FF2D20]/40 shadow-xl backdrop-blur-md
-                     flex items-center gap-2 text-xs font-bold text-slate-200 animate-bounce"
-              style="animation-duration: 5s;"
+              class="absolute top-2 sm:top-4 -right-4 sm:-right-8 px-3 py-1 sm:py-1.5 rounded-full bg-[#070E20]/95 border border-[#38BDF8]/40 shadow-xl backdrop-blur-md
+                     flex items-center gap-2 text-[11px] sm:text-xs font-bold text-slate-200 hover:scale-105 transition-all duration-300 z-20"
             >
-              <div class="w-2 h-2 rounded-full bg-[#FF2D20]"></div>
-              <span>{{ t.hero.floatingBadges.backend }}</span>
+              <div class="w-2 h-2 rounded-full bg-[#38BDF8] shadow-[0_0_8px_#38BDF8]"></div>
+              <span>{{ t.hero.floatingBadges.flutter }}</span>
             </div>
 
-            <!-- 3. Vue.js & TS Badge -->
+            <!-- 3. Right Center (3:00) - UI/UX Design -->
             <div 
-              class="absolute top-1/2 -left-6 sm:-left-8 -translate-y-1/2 px-3 py-1.5 rounded-full bg-[#070E20]/90 border border-[#42B883]/40 shadow-xl backdrop-blur-md
-                     flex items-center gap-2 text-xs font-bold text-slate-200 hover:scale-105 transition-transform"
+              class="absolute top-1/2 -right-8 sm:-right-14 -translate-y-1/2 px-3 py-1 sm:py-1.5 rounded-full bg-[#070E20]/95 border border-[#F59E0B]/40 shadow-xl backdrop-blur-md
+                     flex items-center gap-2 text-[11px] sm:text-xs font-bold text-slate-200 hover:scale-105 transition-all duration-300 z-20"
             >
-              <div class="w-2 h-2 rounded-full bg-[#42B883]"></div>
-              <span>{{ t.hero.floatingBadges.frontend }}</span>
+              <div class="w-2 h-2 rounded-full bg-[#F59E0B] shadow-[0_0_8px_#F59E0B]"></div>
+              <span>{{ t.hero.floatingBadges.uiux }}</span>
             </div>
 
-            <!-- 4. AI Badge -->
+            <!-- 4. Bottom Right (4:30) - AI Foundation -->
             <div 
-              class="absolute bottom-6 -right-4 sm:-right-6 px-3 py-1.5 rounded-full bg-[#070E20]/90 border border-[#A855F7]/40 shadow-xl backdrop-blur-md
-                     flex items-center gap-2 text-xs font-bold text-slate-200"
+              class="absolute bottom-4 sm:bottom-6 -right-4 sm:-right-8 px-3 py-1 sm:py-1.5 rounded-full bg-[#070E20]/95 border border-[#10B981]/40 shadow-xl backdrop-blur-md
+                     flex items-center gap-2 text-[11px] sm:text-xs font-bold text-slate-200 hover:scale-105 transition-all duration-300 z-20"
             >
-              <div class="w-2 h-2 rounded-full bg-[#A855F7]"></div>
-              <span>{{ t.hero.floatingBadges.ai }}</span>
+              <div class="w-2 h-2 rounded-full bg-[#10B981] shadow-[0_0_8px_#10B981]"></div>
+              <span>{{ t.hero.floatingBadges.aiFoundation }}</span>
+            </div>
+
+            <!-- 5. Bottom Center (6:00) - Advanced AI -->
+            <div 
+              class="absolute -bottom-5 sm:-bottom-7 left-1/2 -translate-x-1/2 px-3 py-1 sm:py-1.5 rounded-full bg-[#070E20]/95 border border-[#A855F7]/40 shadow-xl backdrop-blur-md
+                     flex items-center gap-2 text-[11px] sm:text-xs font-bold text-slate-200 hover:scale-105 transition-all duration-300 z-20"
+            >
+              <div class="w-2 h-2 rounded-full bg-[#A855F7] shadow-[0_0_8px_#A855F7]"></div>
+              <span>{{ t.hero.floatingBadges.advancedAi }}</span>
+            </div>
+
+            <!-- 6. Bottom Left (7:30) - Laravel & APIs -->
+            <div 
+              class="absolute bottom-4 sm:bottom-6 -left-4 sm:-left-8 px-3 py-1 sm:py-1.5 rounded-full bg-[#070E20]/95 border border-[#FF2D20]/40 shadow-xl backdrop-blur-md
+                     flex items-center gap-2 text-[11px] sm:text-xs font-bold text-slate-200 hover:scale-105 transition-all duration-300 z-20"
+            >
+              <div class="w-2 h-2 rounded-full bg-[#FF2D20] shadow-[0_0_8px_#FF2D20]"></div>
+              <span>{{ t.hero.floatingBadges.laravel }}</span>
+            </div>
+
+            <!-- 7. Left Center (9:00) - Cybersecurity -->
+            <div 
+              class="absolute top-1/2 -left-8 sm:-left-14 -translate-y-1/2 px-3 py-1 sm:py-1.5 rounded-full bg-[#070E20]/95 border border-[#06B6D4]/40 shadow-xl backdrop-blur-md
+                     flex items-center gap-2 text-[11px] sm:text-xs font-bold text-slate-200 hover:scale-105 transition-all duration-300 z-20"
+            >
+              <div class="w-2 h-2 rounded-full bg-[#06B6D4] shadow-[0_0_8px_#06B6D4]"></div>
+              <span>{{ t.hero.floatingBadges.cybersecurity }}</span>
+            </div>
+
+            <!-- 8. Top Left (10:30) - Architecture -->
+            <div 
+              class="absolute top-2 sm:top-4 -left-4 sm:-left-8 px-3 py-1 sm:py-1.5 rounded-full bg-[#070E20]/95 border border-[#EAB308]/40 shadow-xl backdrop-blur-md
+                     flex items-center gap-2 text-[11px] sm:text-xs font-bold text-slate-200 hover:scale-105 transition-all duration-300 z-20"
+            >
+              <div class="w-2 h-2 rounded-full bg-[#EAB308] shadow-[0_0_8px_#EAB308]"></div>
+              <span>{{ t.hero.floatingBadges.architecture }}</span>
             </div>
 
           </div>

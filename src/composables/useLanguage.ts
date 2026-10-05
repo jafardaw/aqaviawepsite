@@ -32,11 +32,14 @@ export const content = {
         { value: 'New Mexico, USA', label: 'كيان مرخص رسمياً في' },
       ],
       floatingBadges: {
-        mobile: 'Flutter & Dart',
-        backend: 'Laravel & APIs',
-        frontend: 'Vue 3 & TypeScript',
-        ai: 'AI & Data Science',
-        design: 'UI/UX & Systems',
+        flutter: 'Flutter & Dart',
+        laravel: 'Laravel & APIs',
+        react: 'React.js',
+        uiux: 'UI/UX Design',
+        aiFoundation: 'AI Foundation',
+        advancedAi: 'Advanced AI',
+        architecture: 'الهندسة المعمارية',
+        cybersecurity: 'Cybersecurity',
       }
     }
   },
@@ -67,11 +70,14 @@ export const content = {
         { value: 'New Mexico, USA', label: 'Officially registered corporate entity' },
       ],
       floatingBadges: {
-        mobile: 'Flutter & Dart',
-        backend: 'Laravel & APIs',
-        frontend: 'Vue 3 & TypeScript',
-        ai: 'AI & Data Science',
-        design: 'UI/UX & Systems',
+        flutter: 'Flutter & Dart',
+        laravel: 'Laravel & APIs',
+        react: 'React.js',
+        uiux: 'UI/UX Design',
+        aiFoundation: 'AI Foundation',
+        advancedAi: 'Advanced AI',
+        architecture: 'Architecture',
+        cybersecurity: 'Cybersecurity',
       }
     }
   }
