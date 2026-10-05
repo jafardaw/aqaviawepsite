@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "name": "م. جعفر دو",
+    "track": "Mobile Engineering (Flutter)",
+    "role": "Senior Mobile Architect & Technical Mentor",
+    "bioQuote": "التركيز على كتابة Clean Code وإتقان الـ Architecture وبناء تطبيقات موبايل بمستوى الإنتاج الحقيقي.",
+    "linkedinUrl": "https://linkedin.com",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80",
+    "accentColor": "#38BDF8"
+  },
+  {
+    "id": "2",
+    "name": "م. محمد عيسى",
+    "track": "Mobile Engineering (Flutter)",
+    "role": "Mobile Applications Specialist & Mentor",
+    "bioQuote": "بناء تطبيقات Cross-Platform متكاملة مع إدارة حالة احترافية وكود نظيف وقابل للتوسع.",
+    "linkedinUrl": "https://linkedin.com",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80",
+    "accentColor": "#0284C7"
+  },
+  {
+    "id": "3",
+    "name": "م. خليل كيوان",
+    "track": "Backend Engineering (Laravel)",
+    "role": "Lead Backend & Cloud Engineer",
+    "bioQuote": "التدريب الحقيقي هو حين تواجه أخطاء قواعد البيانات وسباقات التزامن وتتعلم معالجتها بنفسك.",
+    "linkedinUrl": "https://linkedin.com",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&auto=format&fit=crop&q=80",
+    "accentColor": "#FF2D20"
+  },
+  {
+    "id": "4",
+    "name": "م. الاء خليل",
+    "track": "Artificial Intelligence (AI & Machine Learning)",
+    "role": "AI & Machine Learning Specialist",
+    "bioQuote": "تحويل خوارزميات الذكاء الاصطناعي والنماذج التنبؤية من الجانب الأكاديمي إلى تطبيقات وحلول ذكية تعمل على أرض الواقع.",
+    "linkedinUrl": "https://linkedin.com",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&auto=format&fit=crop&q=80",
+    "accentColor": "#10B981"
+  },
+  {
+    "id": "5",
+    "name": "م. حلا كمون",
+    "track": "Frontend (React.js) & UI/UX Design",
+    "role": "Senior UI/UX Specialist & Frontend Engineer",
+    "bioQuote": "نعلمك التفكير في راحة المستخدم الحقيقي وعائد الأعمال، وليس مجرد رسم واجهات جميلة، مع بناء نظام واجهات يتحمل ملايين الزيارات باحترافية.",
+    "linkedinUrl": "https://linkedin.com",
+    "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&auto=format&fit=crop&q=80",
+    "accentColor": "#F59E0B"
+  },
+  {
+    "id": "6",
+    "name": "م. حسن سليمان",
+    "track": "Architectural Engineering (القسم المعماري والهندسي)",
+    "role": "Lead Architectural Engineer & BIM Mentor",
+    "bioQuote": "الانطلاق من الصفر التام لاحتراف النمذجة والرسم المعماري، قراءة المخططات التنفيذية، وإخراج مشاريع متكاملة ببرامج AutoCAD و 3D Rendering.",
+    "linkedinUrl": "https://linkedin.com",
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&auto=format&fit=crop&q=80",
+    "accentColor": "#EAB308"
+  }
+]

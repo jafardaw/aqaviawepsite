@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import HeroSection from '../components/sections/HeroSection.vue'
-import AboutSection from '../components/sections/AboutSection.vue'
 import InternshipConceptSection from '../components/sections/InternshipConceptSection.vue'
+import TrainingMethodologySection from '../components/sections/TrainingMethodologySection.vue'
+import AboutSection from '../components/sections/AboutSection.vue'
 import TracksSection from '../components/sections/TracksSection.vue'
 import TeamSection from '../components/sections/TeamSection.vue'
 import B2BSolutionsSection from '../components/sections/B2BSolutionsSection.vue'
@@ -19,7 +20,10 @@ import FaqSection from '../components/sections/FaqSection.vue'
     <!-- 2. مفهوم التدريب الداخلي وفارق الكورسات (The Internship Concept & Core Difference) -->
     <InternshipConceptSection />
 
-    <!-- 3. عن أكافيا: About Us & Operational Arms -->
+    <!-- 3. منهجية وسير التدريب العملي في 4 مراحل واضحة (Training Lifecycle & Agile Methodology) -->
+    <TrainingMethodologySection />
+
+    <!-- 4. عن أكافيا: About Us & Operational Arms -->
     <AboutSection />
 
     <!-- 4. المسارات التدريبية: The 7 Technical Specialization Tracks & Capstone Projects -->

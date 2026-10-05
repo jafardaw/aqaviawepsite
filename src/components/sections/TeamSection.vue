@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import { teamData } from '../../data/teamData'
 import { useLanguage } from '../../composables/useLanguage'
+import mentorsJson from '../../data/mentorsData.json'
+import type { MentorItem } from '../../types/team'
 import { 
   Users, 
   Linkedin, 
-  Github, 
-  ShieldCheck, 
-  ArrowUpRight
+  ArrowUpRight, 
+  Quote, 
+  ShieldCheck,
+  Sparkles
 } from 'lucide-vue-next'
 
 const { isArabic } = useLanguage()
+const mentors = mentorsJson as MentorItem[]
 </script>
 
 <template>
@@ -25,119 +28,113 @@ const { isArabic } = useLanguage()
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#12295D]/40 border border-[#F3CE66]/30 shadow-inner">
         <Users class="w-4 h-4 text-[#F3CE66]" />
         <span class="text-xs sm:text-sm font-bold text-[#F3CE66] tracking-wide uppercase">
-          {{ isArabic ? 'فريق القيادة والمهندسون المشرفون' : 'Leadership & Staff Mentors' }}
+          {{ isArabic ? 'فريق الإشراف والمدربون (Mentors & Trainers)' : 'Mentors & Technical Supervisors' }}
         </span>
       </div>
 
       <h2 class="text-3xl sm:text-5xl font-black text-white dark:text-white light:text-[#0B1A3D] tracking-tight leading-tight">
-        <span>{{ isArabic ? 'نخبة من ' : 'Mentored by ' }}</span>
-        <span class="gold-gradient-text">{{ isArabic ? 'كبار مهندسي البرمجيات' : 'Silicon-Caliber Architects' }}</span>
+        <span>{{ isArabic ? 'نخبة من ' : 'Direct Mentorship by ' }}</span>
+        <span class="gold-gradient-text">{{ isArabic ? 'كبار المهندسين والمشرفين' : 'Practicing Senior Engineers' }}</span>
       </h2>
 
-      <p class="text-sm sm:text-base text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed max-w-2xl mx-auto">
+      <p class="text-sm sm:text-base text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
         {{ isArabic 
-          ? 'في Aqavia لا يدربك هواة؛ بل يشرف عليك كبار المهندسين المعماريين الذين بنوا أنظمة مليونية في كبرى المنصات العالمية، ويوجهونك سطر بسطر عبر الـ Code Review الفردي.'
-          : 'At Aqavia, mentorship is exclusively delivered by senior staff engineers who have architected multi-million user platforms and guide your code line-by-line.'
+          ? 'نؤمن في أكافيا بأهمية الشفافية والمصداقية الكاملة؛ لذا يقود برامجنا التدريبية نخبة من المهندسين الممارسين والمشرفين المباشرين على كود ومشاريع المتدربين.'
+          : 'Transparency and engineering integrity: meet our senior mentors and lead specialists who conduct 1-on-1 code reviews and supervise production sprints.'
         }}
       </p>
     </div>
 
-    <!-- Team Cards Grid -->
+    <!-- Mentors Cards Grid (6 Mentors) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
       <div 
-        v-for="member in teamData" 
-        :key="member.id"
+        v-for="mentor in mentors" 
+        :key="mentor.id"
         class="relative flex flex-col justify-between p-7 rounded-3xl
-               bg-[#090E1D]/90 dark:bg-[#090E1D]/95 light:bg-white/95
+               bg-[#080D1C] dark:bg-[#080D1C] light:bg-white
                border border-slate-800 dark:border-slate-800 light:border-slate-200
-               backdrop-blur-xl shadow-xl hover:border-[#F3CE66]/50 transition-all duration-300 group hover:-translate-y-1.5 overflow-hidden"
+               backdrop-blur-xl shadow-2xl hover:border-[#F3CE66]/50 transition-all duration-300 group hover:-translate-y-1.5 overflow-hidden"
       >
         <!-- Top Glow Accent Bar -->
-        <div class="absolute top-0 inset-x-8 h-1 bg-gradient-to-r from-transparent via-[#F3CE66]/40 to-transparent group-hover:via-[#F3CE66] transition-all"></div>
+        <div 
+          class="absolute top-0 inset-x-8 h-1 transition-all group-hover:h-1.5"
+          :style="{ background: `linear-gradient(90deg, transparent, ${mentor.accentColor || '#F3CE66'}, transparent)` }"
+        ></div>
 
         <div class="space-y-5">
-          <!-- Avatar & Socials -->
-          <div class="flex items-start justify-between">
-            <div class="relative">
+          <!-- Avatar, Track Tag & Direct LinkedIn Link -->
+          <div class="flex items-start justify-between gap-3">
+            <div class="relative shrink-0">
               <img 
-                :src="member.avatar" 
-                :alt="isArabic ? member.name.ar : member.name.en"
-                class="w-20 h-20 rounded-2xl object-cover border-2 border-[#F3CE66]/50 shadow-lg group-hover:scale-105 transition-transform duration-300"
+                :src="mentor.avatar" 
+                :alt="mentor.name"
+                class="w-16 h-16 rounded-2xl object-cover border-2 shadow-lg group-hover:scale-105 transition-transform duration-300"
+                :style="{ borderColor: mentor.accentColor || '#F3CE66' }"
               />
-              <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-400 border-2 border-[#090E1D] rounded-full"></span>
+              <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-emerald-400 border-2 border-[#090E1D] rounded-full"></span>
             </div>
 
-            <!-- Social Links (LinkedIn & GitHub) -->
-            <div class="flex items-center gap-2">
-              <a 
-                :href="member.linkedinUrl" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="p-2.5 rounded-xl bg-[#0B1530] text-[#60A5FA] border border-[#12295D] hover:bg-[#2552B5] hover:text-white transition-all shadow-md cursor-pointer group/link"
-                :title="isArabic ? 'الملف الشخصي على LinkedIn' : 'LinkedIn Profile'"
+            <!-- Track Tag -->
+            <div class="flex flex-col items-end gap-2">
+              <span 
+                class="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase inline-flex items-center gap-1 border"
+                :style="{ 
+                  backgroundColor: `${mentor.accentColor || '#F3CE66'}15`, 
+                  borderColor: `${mentor.accentColor || '#F3CE66'}40`,
+                  color: mentor.accentColor || '#F3CE66'
+                }"
               >
-                <Linkedin class="w-4 h-4 group-hover/link:scale-110 transition-transform" />
-              </a>
+                <Sparkles class="w-3 h-3" />
+                {{ mentor.track }}
+              </span>
 
               <a 
-                v-if="member.githubUrl"
-                :href="member.githubUrl" 
+                :href="mentor.linkedinUrl" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="p-2.5 rounded-xl bg-slate-800/80 text-slate-300 border border-slate-700 hover:bg-slate-700 hover:text-white transition-all shadow-md cursor-pointer group/link"
-                :title="isArabic ? 'ملف GitHub' : 'GitHub Profile'"
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold
+                       bg-[#0B1530] text-[#60A5FA] border border-[#12295D] hover:bg-[#1A3D8B] hover:text-white transition-all shadow-sm group/link"
               >
-                <Github class="w-4 h-4 group-hover/link:scale-110 transition-transform" />
+                <Linkedin class="w-3.5 h-3.5" />
+                <span>LinkedIn</span>
+                <ArrowUpRight class="w-3 h-3 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
               </a>
             </div>
           </div>
 
           <!-- Name & Role -->
-          <div>
+          <div class="text-start space-y-1">
             <div class="flex items-center gap-2">
               <h3 class="text-lg sm:text-xl font-black text-white dark:text-white light:text-slate-900 group-hover:text-[#F3CE66] transition-colors">
-                {{ isArabic ? member.name.ar : member.name.en }}
+                {{ mentor.name }}
               </h3>
-              <ShieldCheck class="w-4 h-4 text-[#38BDF8]" />
+              <ShieldCheck class="w-4 h-4 text-emerald-400" />
             </div>
-            <p class="text-xs text-[#F3CE66] font-bold mt-1">
-              {{ isArabic ? member.role.ar : member.role.en }}
+            <p class="text-xs font-semibold text-[#F3CE66]">
+              {{ mentor.role }}
             </p>
-            <span class="inline-block mt-2 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-[#12295D]/50 text-[#93C5FD] border border-[#12295D]">
-              {{ isArabic ? member.badge.ar : member.badge.en }}
-            </span>
           </div>
 
-          <!-- Bio -->
-          <p class="text-xs sm:text-sm text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed font-normal">
-            {{ isArabic ? member.bio.ar : member.bio.en }}
-          </p>
-
-          <!-- Skills Badges -->
-          <div class="flex flex-wrap gap-1.5 pt-2">
-            <span 
-              v-for="skill in member.skills" 
-              :key="skill"
-              class="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-slate-800/70 dark:bg-slate-800/70 light:bg-slate-100 text-slate-200 dark:text-slate-200 light:text-slate-800 border border-slate-700/50"
-            >
-              {{ skill }}
-            </span>
+          <!-- Bio Quote (الاقتباس التوجيهي) -->
+          <div class="p-4 rounded-2xl bg-[#050811]/90 border border-slate-800 relative text-start">
+            <Quote class="w-4 h-4 text-[#F3CE66]/40 mb-1" />
+            <p class="text-xs text-slate-300 leading-relaxed font-normal italic">
+              "{{ mentor.bioQuote }}"
+            </p>
           </div>
         </div>
 
-        <!-- LinkedIn Connect Action Bar -->
-        <div class="pt-5 mt-5 border-t border-slate-800/70 dark:border-slate-800/70 light:border-slate-200 flex items-center justify-between">
-          <span class="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-600 font-medium">
-            {{ isArabic ? 'متاح للاستشارة الهندسية' : 'Available for Mentorship' }}
-          </span>
+        <!-- Card Footer -->
+        <div class="pt-4 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+          <span>{{ isArabic ? 'إشراف ومراجعة كود دورية' : 'Code Review & Mentorship' }}</span>
           <a 
-            :href="member.linkedinUrl" 
+            :href="mentor.linkedinUrl"
             target="_blank" 
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 text-xs font-bold text-[#60A5FA] hover:text-[#F3CE66] transition-colors"
+            class="text-[#60A5FA] hover:text-white font-bold inline-flex items-center gap-1"
           >
-            <span>LinkedIn</span>
-            <ArrowUpRight class="w-3.5 h-3.5" />
+            <span>{{ isArabic ? 'الملف المهني' : 'Profile' }}</span>
+            <ArrowUpRight class="w-3 h-3" />
           </a>
         </div>
       </div>
