@@ -1,95 +1,80 @@
 <script setup lang="ts">
 import { useLanguage } from '../../composables/useLanguage'
 import { 
-  Building, 
-  Layers, 
+  Building2, 
+  Smartphone, 
   Cpu, 
-  Users, 
+  Palette, 
   MessageSquare, 
   ArrowUpRight,
   Sparkles,
-  CheckCircle2,
-  Code2
+  CheckCircle2
 } from 'lucide-vue-next'
 
 const { isArabic } = useLanguage()
 
 const services = [
   {
-    icon: Code2,
+    icon: Smartphone,
     accent: '#38BDF8',
     title: {
-      ar: 'تطوير المنظومات والتطبيقات المؤسسية (Custom Enterprise Software)',
-      en: 'Custom Enterprise Software Engineering',
+      ar: 'تطوير تطبيقات الويب والهواتف',
+      en: 'Web & Mobile Application Engineering',
     },
     desc: {
-      ar: 'تصميم وبناء تطبيقات ويب وموبايل فائقة السرعة والأداء، بمعماريات Clean Code تضمن قابلية التوسع والصمود أمام ملايين الطلبات المتزامنة.',
-      en: 'Engineering scalable, secure web & mobile platforms architected with Clean Architecture for enterprise-grade throughput.',
+      ar: 'بناء تطبيقات تفاعلية متجاوبة للأنظمة السحابية والجوّال (iOS & Android) بالاعتماد على أحدث أطر العمل (React, Flutter, Laravel).',
+      en: 'Engineering responsive, interactive web and mobile systems for iOS & Android utilizing state-of-the-art frameworks (React, Flutter, Laravel).',
     },
+    techTags: ['Flutter', 'React.js', 'Laravel', 'RESTful APIs', 'Cross-Platform'],
     features: [
-      { ar: 'تطبيقات Flutter مخصصة لنظامي iOS و Android', en: 'High-performance Flutter iOS & Android apps' },
-      { ar: 'منصات ويب فائقة التفاعل بـ Vue 3 & TypeScript', en: 'Ultra-reactive SPAs with Vue 3 & TypeScript' },
-      { ar: 'بوابات دفع إلكتروني متعددة العملات والبلدان', en: 'Global & regional multi-currency payment gateways' },
-    ]
-  },
-  {
-    icon: Layers,
-    accent: '#F3CE66',
-    title: {
-      ar: 'تصميم معماريات السحاب والـ Microservices (Cloud Systems & SRE)',
-      en: 'Cloud Architecture & Distributed Microservices',
-    },
-    desc: {
-      ar: 'إعادة هيكلة الأنظمة الحالية وترقيتها إلى معماريات سحابية موزعة عبر Docker و Kubernetes مع خطوط نشر مؤتمتة بدون أي توقف (Zero Downtime).',
-      en: 'Architecting containerized cloud infrastructure on AWS/GCP with automated CI/CD and zero-downtime failover orchestration.',
-    },
-    features: [
-      { ar: 'إدارة حاويات Docker و Kubernetes كلاستر', en: 'Enterprise Kubernetes & Docker container clusters' },
-      { ar: 'أتمتة النشر والمراقبة الحية (CI/CD & Observability)', en: 'Automated CI/CD pipelines & real-time monitoring' },
-      { ar: 'تحسين كفاءة قواعد البيانات واستعلامات الـ SQL', en: 'High-throughput DB replication & query optimization' },
+      { ar: 'تطبيقات جوّال فائقة السرعة والأداء', en: 'Ultra-fast native-feel mobile applications' },
+      { ar: 'منظومات ويب سحابية متجاوبة وآمنة', en: 'Responsive and secure cloud web architectures' },
+      { ar: 'معمارية نظيفة تضمن سهولة الصيانة والتوسع', en: 'Clean architecture ensuring scalable maintainability' },
     ]
   },
   {
     icon: Cpu,
     accent: '#A855F7',
     title: {
-      ar: 'حلول الذكاء الاصطناعي وأتمتة العمليات (AI & Autonomous Agents)',
-      en: 'Applied AI & Multi-Agent Workflow Automation',
+      ar: 'حلول الذكاء الاصطناعي والأتمتة',
+      en: 'Applied AI & Process Automation',
     },
     desc: {
-      ar: 'دمج تقنيات الذكاء الاصطناعي التوليدي، ونظم استرجاع المعرفة الذكية (RAG)، وبناء وكلاء أذكياء يحللون بيانات شركتك ويؤتمتون المهام المعقدة.',
-      en: 'Deploying domain-specific RAG systems, localized LLM fine-tuning, and multi-agent systems automating cognitive corporate workflows.',
+      ar: 'تطوير نماذج ذكاء اصطناعي مخصصة للمؤسسات، أتمتة العمليات المتكررة، وتكامل أنظمة الـ LLMs لتحسين الإنتاجية.',
+      en: 'Developing custom enterprise AI models, cognitive workflow automation, and seamless integration of LLMs to dramatically boost productivity.',
     },
+    techTags: ['Custom LLMs', 'RAG Pipelines', 'Automated Agents', 'Python', 'FastAPI'],
     features: [
-      { ar: 'مساعدون أذكياء مدربون على بيانات ولوائح الشركة', en: 'Internal enterprise knowledge-base AI agents' },
-      { ar: 'أتمتة الفواتير والتقارير والتدقيق الحسابي', en: 'Intelligent doc processing & automated audits' },
-      { ar: 'حماية بيانات الشركات والالتزام الصارم بالخصوصية', en: 'Private on-premise & secure vector deployments' },
+      { ar: 'أتمتة العمليات والمهام المؤسسية المتكررة', en: 'End-to-end cognitive corporate task automation' },
+      { ar: 'تكامل النماذج اللغوية (LLMs) وقواعد المعرفة', en: 'Enterprise RAG knowledge base integrations' },
+      { ar: 'حماية خصوصية وأمان بيانات الشركات', en: 'Strict enterprise data privacy and local sandboxing' },
     ]
   },
   {
-    icon: Users,
-    accent: '#42B883',
+    icon: Palette,
+    accent: '#F59E0B',
     title: {
-      ar: 'تكوين الفرق البرمجية المتخصصة (Dedicated Engineering Squads)',
-      en: 'Dedicated Engineering Squads & Tech Staffing',
+      ar: 'تصميم المنتجات الرقمية (UI/UX)',
+      en: 'Digital Product Design (UI/UX)',
     },
     desc: {
-      ar: 'تزويد شركتك بنخبة من أفضل الكفاءات الهندسية المدربة في أكافيا، لتعمل كامتداد مباشر لفريقك الداخلي بإشراف استشاري دوري من خبرائنا.',
-      en: 'Augment your development velocity with elite, pre-vetted engineers trained under Silicon Valley engineering standards.',
+      ar: 'تصميم واجهات وتجارب استخدام متطورة تركز على سهولة الاستخدام وزيادة معدل التحويل لرواد الأعمال والشركات.',
+      en: 'Crafting sophisticated interfaces and intuitive user journeys engineered to maximize user adoption and conversion rates for ambitious brands.',
     },
+    techTags: ['Figma Pro', 'Design Systems', 'UX Research', 'Prototyping', 'Conversion Optimization'],
     features: [
-      { ar: 'مهندسون جاهزون لبدء الإنتاج فوراً بدون هدر وقت', en: 'Immediate onboarding with zero ramp-up friction' },
-      { ar: 'إشراف استشاري ومعماري أسبوعي من كبار خبراء أكافيا', en: 'Weekly architectural governance by senior mentors' },
-      { ar: 'مرونة تعاقدية تناسب احتياجات الشركات والمشاريع', en: 'Agile engagement models tailored to your sprint goals' },
+      { ar: 'أبحاث مستخدم معمقة وتصميم رحلة العميل', en: 'Qualitative user research and friction-free journeys' },
+      { ar: 'بناء Design Systems متكاملة وقابلة للتوسع', en: 'Modular scalable component design systems' },
+      { ar: 'رفع معدلات التحويل وسهولة الاستخدام', en: 'Conversion rate optimization & developer-ready handoff' },
     ]
-  },
+  }
 ]
 
 const handleContactB2B = () => {
   const phone = '963988588859'
   const message = isArabic.value 
-    ? 'مرحباً إدارة أكافيا، أود الاستفسار عن خدمات الشركات وتطوير الحلول الرقمية (B2B Solutions) لمشروعي.'
-    : 'Hello Aqavia Team, I would like to inquire about your B2B enterprise software development and tech solutions.'
+    ? 'مرحباً إدارة أكافيا، أود طلب استشارة تقنية وبحث حلول برمجية ورقمية مخصصة لشركتي.'
+    : 'Hello Aqavia Leadership, I would like to request an enterprise tech consultation regarding custom software development for my business.'
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
   window.open(url, '_blank')
 }
@@ -104,35 +89,41 @@ const handleContactB2B = () => {
     <div class="absolute -top-24 right-1/4 w-[600px] h-[350px] bg-[#12295D]/30 blur-[130px] rounded-full pointer-events-none -z-10"></div>
     <div class="absolute bottom-10 left-1/4 w-[500px] h-[300px] bg-[#C89B3C]/15 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
-    <!-- Section Header -->
+    <!-- Section Header (Clear B2B Separation) -->
     <div class="text-center max-w-3xl mx-auto space-y-4 mb-16 sm:mb-20">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#12295D]/50 border border-[#F3CE66]/30 shadow-inner">
-        <Building class="w-4 h-4 text-[#F3CE66]" />
+        <Building2 class="w-4 h-4 text-[#F3CE66]" />
         <span class="text-xs sm:text-sm font-bold text-[#F3CE66] tracking-wide uppercase">
-          {{ isArabic ? 'خدمات الشركات والحلول الرقمية' : 'Enterprise B2B Solutions' }}
+          {{ isArabic ? 'خدمات الأعمال للشركات (B2B Solutions)' : 'Enterprise B2B Technology Solutions' }}
         </span>
       </div>
 
       <h2 class="text-3xl sm:text-5xl font-black text-white dark:text-white light:text-[#0B1A3D] tracking-tight leading-tight">
-        <span>{{ isArabic ? 'برمجيات متطورة تقود ' : 'Engineering High-Performance ' }}</span>
-        <span class="gold-gradient-text">{{ isArabic ? 'نمو وتوسع أعمالك' : 'Enterprise Systems' }}</span>
+        <span>{{ isArabic ? 'حلول برمجية ورقمية تقود ' : 'Engineering High-Performance ' }}</span>
+        <span class="gold-gradient-text">{{ isArabic ? 'نمو وتوسع الشركات' : 'Digital Growth' }}</span>
       </h2>
 
-      <p class="text-sm sm:text-base text-slate-400 dark:text-slate-400 light:text-slate-600 leading-relaxed max-w-2xl mx-auto">
+      <p class="text-sm sm:text-base text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
         {{ isArabic 
-          ? 'إلى جانب التدريب الهندسي، تمتلك أكافيا ذراعاً تقنياً متخصصاً في بناء الأنظمة الرقمية المعقدة، وتقديم الاستشارات المعمارية للشركات والمؤسسات التي تبحث عن الجودة الفائقة.'
-          : 'Beyond training, Aqavia operates a bespoke engineering practice delivering production-ready platforms, microservices architectures, and AI systems for ambitious enterprises.'
+          ? 'لضمان الفصل التام بين مسار التدريب وخدمات قطاع الأعمال؛ تخصص أكافيا فريقاً هندسياً مستقلاً لتنفيذ المشاريع التقنية المعقدة للشركات والمؤسسات ورواد الأعمال بأعلى معايير الجودة العالمية.'
+          : 'Dedicated enterprise engineering: Aqavia operates an independent digital practice delivering robust web & mobile architectures, AI systems, and conversion-focused UX design.'
         }}
       </p>
     </div>
 
-    <!-- Services Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 items-stretch">
+    <!-- 3 Core Services Grid (Focused & High Impact) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-stretch">
       <div 
         v-for="(service, idx) in services" 
         :key="idx"
-        class="p-7 sm:p-8 rounded-3xl bg-[#080D1C] border border-slate-800 hover:border-[#F3CE66]/40 transition-all duration-300 shadow-xl flex flex-col justify-between group"
+        class="relative p-7 sm:p-8 rounded-3xl bg-[#080D1C] dark:bg-[#080D1C] light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-200 shadow-2xl flex flex-col justify-between group hover:border-[#F3CE66]/50 transition-all duration-300 overflow-hidden"
       >
+        <!-- Top accent line -->
+        <div 
+          class="absolute top-0 inset-x-8 h-1 transition-all group-hover:h-1.5"
+          :style="{ background: `linear-gradient(90deg, transparent, ${service.accent}, transparent)` }"
+        ></div>
+
         <div>
           <div class="flex items-center justify-between mb-6">
             <div 
@@ -141,25 +132,36 @@ const handleContactB2B = () => {
             >
               <component :is="service.icon" class="w-6 h-6" />
             </div>
-            <span class="text-xs font-bold text-slate-500 group-hover:text-[#F3CE66] transition-colors">
-              B2B // 0{{ idx + 1 }}
+            <span class="text-xs font-bold text-slate-500 group-hover:text-[#F3CE66] transition-colors font-mono">
+              SERVICE // 0{{ idx + 1 }}
             </span>
           </div>
 
-          <h3 class="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-[#F3CE66] transition-colors">
+          <h3 class="text-lg sm:text-xl font-black text-white dark:text-white light:text-slate-900 mb-3 group-hover:text-[#F3CE66] transition-colors text-start">
             {{ isArabic ? service.title.ar : service.title.en }}
           </h3>
 
-          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+          <p class="text-xs sm:text-sm text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed mb-6 font-normal text-start">
             {{ isArabic ? service.desc.ar : service.desc.en }}
           </p>
+
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span 
+              v-for="tag in service.techTags" 
+              :key="tag"
+              class="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-slate-900/90 text-slate-300 border border-slate-800"
+            >
+              {{ tag }}
+            </span>
+          </div>
         </div>
 
-        <div class="space-y-2.5 pt-4 border-t border-slate-800/80">
+        <div class="space-y-2.5 pt-4 border-t border-slate-800/80 text-start">
           <div 
             v-for="(feature, fIdx) in service.features" 
             :key="fIdx"
-            class="flex items-center gap-2.5 text-xs text-slate-300"
+            class="flex items-center gap-2.5 text-xs text-slate-300 dark:text-slate-300 light:text-slate-700"
           >
             <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0" />
             <span>{{ isArabic ? feature.ar : feature.en }}</span>
@@ -173,15 +175,15 @@ const handleContactB2B = () => {
       <div class="space-y-3 text-center md:text-start max-w-xl">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F3CE66]/10 text-[#F3CE66] text-xs font-bold border border-[#F3CE66]/20">
           <Sparkles class="w-3.5 h-3.5" />
-          <span>{{ isArabic ? 'استشارة برمجية مجانية لمشروعك' : 'Complimentary Enterprise Architecture Call' }}</span>
+          <span>{{ isArabic ? 'استشارة برمجية مؤسسية لمشروعك' : 'Enterprise Tech Consultation' }}</span>
         </div>
         <h3 class="text-2xl sm:text-3xl font-black text-white">
-          {{ isArabic ? 'هل تبحث عن شريك تقني يمتلك معايير هندسية عالمية؟' : 'Ready to Build or Scale Your Enterprise System?' }}
+          {{ isArabic ? 'هل تبحث عن فريق برمجي يمتلك معايير هندسية عالمية؟' : 'Ready to Engineer Your Enterprise Software?' }}
         </h3>
-        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
           {{ isArabic 
-            ? 'تواصل مباشرة مع فريق الإدارة والاستشارات التقنية في أكافيا لمناقشة متطلبات مشروعك وتحديد أنسب معمارية برمجية وفريق عمل متخصص.'
-            : 'Connect directly with Aqavia engineering leadership to scope your system architecture and deploy vetted squads.'
+            ? 'تواصل مباشرة مع إدارة الحلول الرقمية في أكافيا لتحديد متطلبات مشروعك، دراسة الجدوى التقنية، وبدء التنفيذ بفريق متخصص.'
+            : 'Connect directly with Aqavia digital solutions leadership to scope your system architecture and deploy vetted squads.'
           }}
         </p>
       </div>
@@ -195,7 +197,7 @@ const handleContactB2B = () => {
                  shadow-lg shadow-[#F3CE66]/25 hover:shadow-[#F3CE66]/40 hover:scale-105 active:scale-95 transition-all cursor-pointer"
         >
           <MessageSquare class="w-4 h-4" />
-          <span>{{ isArabic ? 'تواصل معنا عبر واتساب (+963)' : 'Contact B2B Team on WhatsApp' }}</span>
+          <span>{{ isArabic ? 'طلب استشارة تقنية لشركتك (+963)' : 'Request Tech Consultation' }}</span>
           <ArrowUpRight class="w-4 h-4" />
         </button>
       </div>
