@@ -5,7 +5,7 @@ import {
   Sparkles, 
   ArrowRight, 
   ArrowLeft, 
-  Code2, 
+  Building, 
   ChevronDown
 } from 'lucide-vue-next'
 import logoImg from '../../assets/logo.jpg'
@@ -76,26 +76,23 @@ onMounted(() => {
           </div>
 
           <!-- Main Bold Headline -->
-          <h1 class="gsap-fade-up text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.2] sm:leading-[1.15]">
-            <span class="text-white dark:text-white light:text-[#0B1A3D] block sm:inline">
-              {{ t.hero.titlePrefix }}
+          <h1 class="gsap-fade-up text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight leading-[1.25] sm:leading-[1.2]">
+            <span class="text-white dark:text-white light:text-[#0B1A3D] block">
+              {{ t.hero.titlePart1 }}
             </span>
-            <span class="gold-gradient-text px-2 inline-block drop-shadow-sm">
-              {{ t.hero.titleHighlight }}
-            </span>
-            <span class="text-slate-200 dark:text-slate-200 light:text-[#12295D] block mt-1 sm:mt-2">
-              {{ t.hero.titleSuffix }}
+            <span class="gold-gradient-text block mt-1 sm:mt-2">
+              {{ t.hero.titlePart2 }}
             </span>
           </h1>
 
-          <!-- Company Overview / Bio -->
-          <p class="gsap-fade-up text-base sm:text-lg lg:text-xl text-slate-300 dark:text-slate-300 light:text-slate-700 leading-relaxed max-w-2xl font-normal">
+          <!-- Company Overview / Sub-headline -->
+          <p class="gsap-fade-up text-base sm:text-lg text-slate-300 dark:text-slate-300 light:text-slate-700 leading-relaxed max-w-2xl font-normal">
             {{ t.hero.description }}
           </p>
 
           <!-- Action Buttons -->
           <div class="gsap-fade-up flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 w-full sm:w-auto">
-            <!-- Primary Gold CTA -->
+            <!-- Primary Gold CTA: استكشف مسارات التدريب الداخلي -->
             <a 
               href="#tracks" 
               class="relative group overflow-hidden px-7 py-3.5 rounded-full font-bold text-sm sm:text-base
@@ -107,29 +104,29 @@ onMounted(() => {
               <component :is="isArabic ? ArrowLeft : ArrowRight" class="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
             </a>
 
-            <!-- Secondary Outline Button -->
+            <!-- Secondary Outline Button: طلب حلول برمجية للشركات -->
             <a 
-              href="#methodology"
+              href="#b2b"
               class="px-6 py-3.5 rounded-full font-semibold text-sm sm:text-base
                      bg-slate-900/60 dark:bg-slate-900/60 light:bg-white/80 text-slate-200 dark:text-slate-200 light:text-slate-900
                      border border-[#12295D]/80 hover:border-[#F3CE66]/60 hover:text-[#F3CE66] backdrop-blur-md transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md"
             >
-              <Code2 class="w-4 h-4 text-[#3B82F6]" />
-              <span>{{ t.hero.aboutBtn }}</span>
+              <Building class="w-4 h-4 text-[#38BDF8]" />
+              <span>{{ t.hero.b2bBtn }}</span>
             </a>
           </div>
 
-          <!-- Trust & Value Pillars (Stats Counter) -->
-          <div class="gsap-fade-up grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 w-full border-t border-slate-800/80 dark:border-slate-800/80 light:border-slate-200">
+          <!-- Trust & Value Pillars (Key Metrics Bar - 3 Columns) -->
+          <div class="gsap-fade-up grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-6 w-full border-t border-slate-800/80 dark:border-slate-800/80 light:border-slate-200">
             <div 
               v-for="(stat, index) in t.hero.stats" 
               :key="index"
-              class="p-3 sm:p-3.5 rounded-2xl bg-slate-900/40 dark:bg-slate-900/50 light:bg-white/60 border border-slate-800/60 dark:border-slate-800/60 light:border-slate-200 backdrop-blur-sm"
+              class="p-4 rounded-2xl bg-slate-900/50 dark:bg-slate-900/60 light:bg-white/70 border border-slate-800/80 dark:border-slate-800/80 light:border-slate-200 backdrop-blur-sm transition-all hover:border-[#F3CE66]/30"
             >
-              <div class="text-base sm:text-lg font-black text-[#F3CE66]">
+              <div class="text-base sm:text-lg font-black text-[#F3CE66] font-mono">
                 {{ stat.value }}
               </div>
-              <div class="text-[11px] sm:text-xs text-slate-400 dark:text-slate-400 light:text-slate-600 font-medium mt-0.5 leading-snug">
+              <div class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 font-medium mt-1 leading-snug">
                 {{ stat.label }}
               </div>
             </div>
