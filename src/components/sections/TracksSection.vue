@@ -16,13 +16,12 @@ const selectedCategory = ref<TrackCategory>('all')
 
 const categories = [
   { id: 'all' as TrackCategory, label: { ar: 'كافة المسارات (7)', en: 'All Tracks (7)' } },
-  { id: 'mobile' as TrackCategory, label: { ar: 'تطبيقات الموبايل (Flutter)', en: 'Mobile (Flutter)' } },
-  { id: 'backend' as TrackCategory, label: { ar: 'الأنظمة الخلفية (Laravel)', en: 'Backend (Laravel)' } },
-  { id: 'frontend' as TrackCategory, label: { ar: 'واجهات الويب (Vue 3)', en: 'Web (Vue 3)' } },
-  { id: 'fullstack' as TrackCategory, label: { ar: 'الويب المتكامل (Full-Stack)', en: 'Full-Stack Web' } },
-  { id: 'ai' as TrackCategory, label: { ar: 'الذكاء الاصطناعي (AI/LLMs)', en: 'AI & Data' } },
-  { id: 'devops' as TrackCategory, label: { ar: 'السحاب والـ DevOps', en: 'DevOps & Cloud' } },
-  { id: 'design' as TrackCategory, label: { ar: 'تصميم المنتجات (UI/UX)', en: 'UI/UX Design' } },
+  { id: 'backend' as TrackCategory, label: { ar: 'Backend (Laravel)', en: 'Backend (Laravel)' } },
+  { id: 'uiux' as TrackCategory, label: { ar: 'تصميم UI/UX', en: 'UI/UX Design' } },
+  { id: 'frontend' as TrackCategory, label: { ar: 'Frontend (React)', en: 'Frontend (React)' } },
+  { id: 'mobile' as TrackCategory, label: { ar: 'Mobile (Flutter)', en: 'Mobile (Flutter)' } },
+  { id: 'ai' as TrackCategory, label: { ar: 'الذكاء الاصطناعي (AI)', en: 'Artificial Intelligence' } },
+  { id: 'architecture' as TrackCategory, label: { ar: 'الهندسة المعمارية', en: 'Architecture' } },
 ]
 
 const filteredTracks = computed(() => {

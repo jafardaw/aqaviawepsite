@@ -3,21 +3,18 @@ import { ref, computed } from 'vue'
 import type { TrackItem } from '../../types/track'
 import { useLanguage } from '../../composables/useLanguage'
 import { useCardTilt } from '../../composables/useCardTilt'
-import { useApplicationModal } from '../../composables/useApplicationModal'
 import { 
   Smartphone, 
   Server, 
   Layout, 
-  Layers,
   Brain, 
-  Cloud,
   Palette, 
-  Rocket, 
+  Compass, 
+  Cpu, 
   Clock, 
-  Flame, 
-  ArrowUpRight,
-  ShieldCheck,
-  Cpu
+  CheckCircle2, 
+  FileCheck2, 
+  ExternalLink
 } from 'lucide-vue-next'
 
 const props = defineProps<{
@@ -25,7 +22,6 @@ const props = defineProps<{
 }>()
 
 const { isArabic } = useLanguage()
-const { openModal } = useApplicationModal()
 const cardRef = ref<HTMLElement | null>(null)
 const { rotateX, rotateY, glowX, glowY, isHovered, onMouseMove, onMouseLeave } = useCardTilt(10)
 
@@ -41,10 +37,9 @@ const iconComponent = computed(() => {
     case 'Smartphone': return Smartphone
     case 'Server': return Server
     case 'Layout': return Layout
-    case 'Layers': return Layers
     case 'Brain': return Brain
-    case 'Cloud': return Cloud
     case 'Palette': return Palette
+    case 'Compass': return Compass
     default: return Cpu
   }
 })
@@ -52,7 +47,7 @@ const iconComponent = computed(() => {
 
 <template>
   <div 
-    class="relative group"
+    class="relative group h-full"
     style="perspective: 1200px;"
   >
     <!-- Outer Glow Underneath -->
@@ -92,7 +87,7 @@ const iconComponent = computed(() => {
         :style="{ background: `linear-gradient(90deg, transparent, ${track.accentColor}, transparent)` }"
       ></div>
 
-      <div class="relative z-10 space-y-6">
+      <div class="relative z-10 space-y-5">
         
         <!-- Header: Icon, Badge & Seats -->
         <div class="flex items-center justify-between gap-3">
@@ -116,7 +111,6 @@ const iconComponent = computed(() => {
                   border: `1px solid ${track.accentColor}30`
                 }"
               >
-                <Flame class="w-3 h-3" />
                 {{ isArabic ? track.badge.ar : track.badge.en }}
               </span>
             </div>
@@ -129,107 +123,64 @@ const iconComponent = computed(() => {
           </div>
         </div>
 
-        <!-- Track Title & Overview -->
-        <div class="space-y-2">
+        <!-- Track Title -->
+        <div class="space-y-1 text-start">
           <h3 class="text-xl sm:text-2xl font-black text-white dark:text-white light:text-[#0B1A3D] leading-snug group-hover:text-[#F3CE66] transition-colors">
             {{ isArabic ? track.name.ar : track.name.en }}
           </h3>
-          <p class="text-xs sm:text-sm text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed font-normal line-clamp-3">
-            {{ isArabic ? track.overview.ar : track.overview.en }}
-          </p>
-        </div>
-
-        <!-- Capstone Production Project Box (المشروع الضخم الذي سيعمل عليه المتدرب) -->
-        <div 
-          class="relative p-4 sm:p-5 rounded-2xl bg-[#060A16]/90 dark:bg-[#060A16]/90 light:bg-slate-50 border border-slate-700/60 dark:border-slate-700/60 light:border-slate-200 transition-colors group-hover:border-[#F3CE66]/40"
-        >
-          <!-- Accent Corner Pill -->
-          <div class="flex items-center justify-between mb-2.5">
-            <div class="flex items-center gap-2 text-xs font-bold text-[#F3CE66]">
-              <Rocket class="w-4 h-4 text-[#F3CE66]" />
-              <span>{{ isArabic ? 'مشروع التخرج الميداني الضخم:' : 'Capstone Production Project:' }}</span>
-            </div>
-            <span class="text-[10px] px-2 py-0.5 rounded-md bg-[#12295D]/60 text-[#60A5FA] border border-[#12295D] font-medium">
-              {{ isArabic ? track.capstoneProject.type.ar : track.capstoneProject.type.en }}
+          <div class="flex items-center gap-2 pt-1 text-xs text-slate-400">
+            <span class="px-2 py-0.5 rounded-md bg-slate-800/80 text-slate-300 font-medium">
+              {{ isArabic ? track.level.ar : track.level.en }}
             </span>
-          </div>
-
-          <!-- Project Title -->
-          <h4 class="text-sm sm:text-base font-extrabold text-slate-100 dark:text-slate-100 light:text-slate-900 mb-1.5">
-            {{ isArabic ? track.capstoneProject.name.ar : track.capstoneProject.name.en }}
-          </h4>
-
-          <!-- Project Description -->
-          <p class="text-xs text-slate-400 dark:text-slate-400 light:text-slate-600 leading-relaxed mb-3">
-            {{ isArabic ? track.capstoneProject.description.ar : track.capstoneProject.description.en }}
-          </p>
-
-          <!-- Tech Stack Pills -->
-          <div class="flex flex-wrap gap-1.5">
-            <span 
-              v-for="tech in track.capstoneProject.techStack" 
-              :key="tech"
-              class="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-slate-800/80 dark:bg-slate-800/80 light:bg-white text-slate-200 dark:text-slate-200 light:text-slate-800 border border-slate-700/60 dark:border-slate-700/60 light:border-slate-300"
-            >
-              {{ tech }}
+            <span>•</span>
+            <span class="flex items-center gap-1">
+              <Clock class="w-3.5 h-3.5 text-[#F3CE66]" />
+              {{ isArabic ? track.duration.ar : track.duration.en }}
             </span>
           </div>
         </div>
 
-        <!-- Senior Mentor Profile (المدرب والخبير المشرف) -->
-        <div class="flex items-center justify-between p-3 rounded-2xl bg-slate-900/40 dark:bg-slate-900/50 light:bg-slate-100/60 border border-slate-800/60 dark:border-slate-800/60 light:border-slate-200">
-          <div class="flex items-center gap-3">
-            <div class="relative">
-              <img 
-                :src="track.mentor.avatar" 
-                :alt="isArabic ? track.mentor.name.ar : track.mentor.name.en"
-                class="w-11 h-11 rounded-full object-cover border-2 border-[#F3CE66]/50 shadow-md"
-              />
-              <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-400 border-2 border-[#090E1D] rounded-full"></span>
-            </div>
-            <div class="text-start">
-              <div class="flex items-center gap-1.5">
-                <span class="text-xs sm:text-sm font-bold text-white dark:text-white light:text-slate-900">
-                  {{ isArabic ? track.mentor.name.ar : track.mentor.name.en }}
-                </span>
-                <ShieldCheck class="w-3.5 h-3.5 text-[#38BDF8]" />
-              </div>
-              <p class="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-600 font-medium leading-tight">
-                {{ isArabic ? track.mentor.role.ar : track.mentor.role.en }}
-              </p>
-              <p class="text-[10px] text-[#C89B3C] font-semibold mt-0.5">
-                {{ isArabic ? track.mentor.experience.ar : track.mentor.experience.en }}
-              </p>
-            </div>
+        <!-- 1. المتطلبات المسبقة (Prerequisites Box) -->
+        <div class="p-3.5 sm:p-4 rounded-2xl bg-[#060A16]/90 border border-slate-700/60 space-y-1.5 text-start">
+          <div class="flex items-center gap-2 text-xs font-bold text-amber-400">
+            <FileCheck2 class="w-4 h-4 text-amber-400 shrink-0" />
+            <span>{{ isArabic ? 'المتطلبات المسبقة:' : 'Prerequisites:' }}</span>
           </div>
-          
-          <span class="hidden sm:inline-block px-2 py-1 rounded-md text-[10px] font-bold uppercase bg-[#12295D]/40 text-[#93C5FD] border border-[#12295D]">
-            {{ track.mentor.companyTag }}
-          </span>
+          <p class="text-xs text-slate-300 leading-relaxed font-normal">
+            {{ isArabic ? track.prerequisites.ar : track.prerequisites.en }}
+          </p>
+        </div>
+
+        <!-- 2. ما ستنجزه بالتدريب (What you will accomplish Box) -->
+        <div class="p-3.5 sm:p-4 rounded-2xl bg-[#0B152E]/60 border border-[#F3CE66]/20 space-y-1.5 text-start">
+          <div class="flex items-center gap-2 text-xs font-bold text-[#F3CE66]">
+            <CheckCircle2 class="w-4 h-4 text-[#F3CE66] shrink-0" />
+            <span>{{ isArabic ? 'ما ستنجزه بالتدريب:' : 'What You Will Build & Accomplish:' }}</span>
+          </div>
+          <p class="text-xs text-slate-200 leading-relaxed font-normal">
+            {{ isArabic ? track.outcomes.ar : track.outcomes.en }}
+          </p>
         </div>
 
       </div>
 
-      <!-- Bottom Meta & Action Button -->
-      <div class="relative z-10 pt-5 mt-5 border-t border-slate-800/70 dark:border-slate-800/70 light:border-slate-200 flex items-center justify-between gap-3">
-        <div class="flex items-center gap-3 text-xs text-slate-400 dark:text-slate-400 light:text-slate-600">
-          <div class="flex items-center gap-1.5">
-            <Clock class="w-3.5 h-3.5 text-[#F3CE66]" />
-            <span>{{ isArabic ? track.duration.ar : track.duration.en }}</span>
-          </div>
-        </div>
+      <!-- 3. الزر المباشر للاستمارة (Direct Registration Button) -->
+      <div class="relative z-10 pt-5 mt-5 border-t border-slate-800/70 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <span class="text-xs text-slate-400 font-medium">
+          {{ isArabic ? 'استمارة التسجيل المعتمدة' : 'Official Application Form' }}
+        </span>
 
-        <!-- Join / Apply Button -->
-        <button 
-          @click="openModal"
-          type="button"
-          class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-slate-100 dark:text-slate-100 light:text-slate-900
-                 bg-slate-800/80 dark:bg-slate-800/80 light:bg-slate-100 border border-slate-700/60
-                 hover:border-[#F3CE66] hover:bg-[#F3CE66] hover:text-[#050811] transition-all duration-300 group/btn cursor-pointer shadow-md"
+        <a 
+          :href="track.registrationUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs
+                 bg-gradient-to-r from-[#C89B3C] via-[#F3CE66] to-[#C89B3C] text-[#050811]
+                 shadow-lg shadow-[#F3CE66]/20 hover:shadow-[#F3CE66]/40 hover:scale-[1.03] active:scale-95 transition-all duration-300 cursor-pointer"
         >
-          <span>{{ isArabic ? 'احجز مقعدك' : 'Enroll Now' }}</span>
-          <ArrowUpRight class="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-        </button>
+          <span>{{ isArabic ? 'سجّل في استمارة المسار' : 'Apply via Official Form' }}</span>
+          <ExternalLink class="w-3.5 h-3.5 shrink-0" />
+        </a>
       </div>
 
     </div>

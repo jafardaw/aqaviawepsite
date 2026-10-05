@@ -2,418 +2,241 @@ import type { TrackItem } from '../types/track'
 
 export const tracksData: TrackItem[] = [
   {
-    id: 'flutter-mobile',
-    category: 'mobile',
-    name: {
-      ar: 'هندسة تطبيقات الموبايل المتقدمة (Flutter & Dart)',
-      en: 'Advanced Mobile Engineering (Flutter & Dart)',
-    },
-    badge: {
-      ar: 'المسار الأكثر طلباً',
-      en: 'Most Popular',
-    },
-    accentColor: '#38BDF8',
-    glowColor: 'rgba(56, 189, 248, 0.4)',
-    iconName: 'Smartphone',
-    overview: {
-      ar: 'بناء تطبيقات مؤسسية متقدمة بمعمارية Clean Architecture وأنماط إدارة الحالة المتقدمة (BLoC & Riverpod) مع التزامن الفوري واختبارات الكود المؤتمتة.',
-      en: 'Build enterprise-grade cross-platform apps using Clean Architecture, advanced state management (BLoC & Riverpod), real-time sync, and automated CI/CD testing pipelines.',
-    },
-    capstoneProject: {
-      name: {
-        ar: 'تطبيق OmniPay & Logistics Super App',
-        en: 'OmniPay & Logistics Super App',
-      },
-      type: {
-        ar: 'تطبيق فائق التوسع (Fintech & Super App)',
-        en: 'High-Scale Multi-Service Super App',
-      },
-      description: {
-        ar: 'منظومة مالية ولوجستية كاملة تتضمن محافظ دفع رقمية، تتبع حي عبر الخرائط، إشعارات فورية عبر WebSockets، وتغطية اختبارات Unit & Widget بنسبة تتجاوز 85%.',
-        en: 'A full-fledged fintech and dispatch platform featuring real-time biometric payments, live GPS fleet telemetry, WebSockets chat, and strict 85%+ test coverage.',
-      },
-      techStack: ['Flutter 3.x', 'Dart', 'BLoC', 'Clean Architecture', 'Dio', 'WebSockets', 'Hive'],
-    },
-    mentor: {
-      name: {
-        ar: 'م. طارق المنصور',
-        en: 'Eng. Tariq Al-Mansoor',
-      },
-      role: {
-        ar: 'Senior Mobile Staff Architect',
-        en: 'Senior Mobile Staff Architect',
-      },
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
-      experience: {
-        ar: 'خبرة 9+ سنوات في هندسة تطبيقات الـ Fintech الكبرى',
-        en: '9+ Years leading enterprise fintech mobile apps',
-      },
-      companyTag: 'Aqavia US Lead',
-    },
-    duration: {
-      ar: '12 أسبوع مكثف',
-      en: '12 Intensive Weeks',
-    },
-    level: {
-      ar: 'متقدم (Advanced)',
-      en: 'Advanced',
-    },
-    seatsRemaining: 4,
-  },
-  {
     id: 'laravel-backend',
     category: 'backend',
+    groupType: 'technical_internship',
     name: {
-      ar: 'هندسة الأنظمة الخلفية والسحابية (Laravel & Microservices)',
-      en: 'Enterprise Backend & Cloud Systems (Laravel)',
+      ar: 'تطوير الأنظمة الخلفية: Backend (Laravel)',
+      en: 'Enterprise Backend Engineering (Laravel)',
     },
     badge: {
-      ar: 'هندسة معماريات ضخمة',
-      en: 'High Scale Architecture',
+      ar: 'مشاريع عملية • يتطلب الأساسيات',
+      en: 'Production Projects • Prerequisites Required',
     },
     accentColor: '#FF2D20',
     glowColor: 'rgba(255, 45, 32, 0.4)',
     iconName: 'Server',
-    overview: {
-      ar: 'إتقان بناء وتصميم APIs السحابية، معماريات الـ Microservices والـ Event-Driven Systems باستخدام أحدث ممارسات Domain-Driven Design (DDD) وتأمين الأنظمة.',
-      en: 'Master enterprise backend architectures, scalable REST & GraphQL APIs, Event-Driven microservices, domain-driven design (DDD), caching, and containerized deployments.',
+    prerequisites: {
+      ar: 'مبادئ لغة PHP ومفاهيم OOP، وقواعد البيانات Relational Databases (MySQL).',
+      en: 'Core PHP fundamentals, OOP principles, and relational databases (MySQL).',
     },
-    capstoneProject: {
-      name: {
-        ar: 'منصة Aether Cloud Multi-Tenant SaaS & Billing Engine',
-        en: 'Aether Cloud Multi-Tenant SaaS & Billing Engine',
-      },
-      type: {
-        ar: 'منصة سحابية متعددة المستأجرين (Enterprise SaaS)',
-        en: 'Multi-Tenant Cloud Billing Infrastructure',
-      },
-      description: {
-        ar: 'بناء بنية تحتية سحابية تعالج ملايين العمليات الحسابية والفواتير والاشتراكات شهرياً بالاعتماد على Redis Queues، PostgreSQL عالي الأداء، و Docker containers.',
-        en: 'Architecting a distributed billing engine executing millions of events with resilient Redis queuing, high-throughput PostgreSQL, and Docker container orchestration.',
-      },
-      techStack: ['Laravel 11', 'PHP 8.3', 'PostgreSQL', 'Redis', 'Docker', 'RabbitMQ', 'Clean DDD'],
+    outcomes: {
+      ar: 'تصميم وبناء Robust REST APIs، أنظمة الصلاحيات والتوثيق، ربط قواعد البيانات المعقدة، وتأمين وحماية الخوادم.',
+      en: 'Designing & building robust REST APIs, authentication/authorization systems, complex DB schemas, and server security.',
     },
-    mentor: {
-      name: {
-        ar: 'د. ألكسندر رايت',
-        en: 'Dr. Alexander Wright',
-      },
-      role: {
-        ar: 'Principal Backend & Distributed Systems Architect',
-        en: 'Principal Backend & Distributed Systems Architect',
-      },
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-      experience: {
-        ar: 'خبرة 14 عاماً في بناء أنظمة البنوك والـ High-load Systems',
-        en: '14+ Years in high-frequency financial backend systems',
-      },
-      companyTag: 'Ex-Stripe Infrastructure',
-    },
-    duration: {
-      ar: '14 أسبوع مكثف',
-      en: '14 Intensive Weeks',
-    },
-    level: {
-      ar: 'متقدم / خبير',
-      en: 'Advanced / Pro',
-    },
-    seatsRemaining: 3,
-  },
-  {
-    id: 'vue-frontend',
-    category: 'frontend',
-    name: {
-      ar: 'هندسة واجهات الويب التفاعلية (Vue 3, TypeScript & GSAP)',
-      en: 'Modern Frontend Engineering (Vue 3 & TypeScript)',
-    },
-    badge: {
-      ar: 'أداء فائق وأنيميشن',
-      en: 'Creative & Performant',
-    },
-    accentColor: '#42B883',
-    glowColor: 'rgba(66, 184, 131, 0.4)',
-    iconName: 'Layout',
-    overview: {
-      ar: 'احتراف بناء تطبيقات الويب العصرية ذات الكود النظيف مع Vue 3 Composition API، وإدارة الحالة المتقدمة عبر Pinia، والأنيميشن الاحترافي بـ GSAP.',
-      en: 'Engineer blazing-fast, award-worthy web applications leveraging Vue 3 Composition API, Pinia architecture, TypeScript type safety, and cinematic GSAP transitions.',
-    },
-    capstoneProject: {
-      name: {
-        ar: 'استوديو Nexus Realtime Data Analytics & Workflow',
-        en: 'Nexus Realtime Data Analytics & Workflow Studio',
-      },
-      type: {
-        ar: 'منصة تحليلات تفاعلية ولوحة تحكم معقدة',
-        en: 'Interactive Canvas & Real-time Analytics Studio',
-      },
-      description: {
-        ar: 'استوديو تفاعلي حي لمعالجة وتصور البيانات الضخمة، محرك رسومات تفاعلية، ولوحات تحكم قابلة للتخصيص الكامل مع سرعة استجابة بمعدل 60 إطار بالثانية.',
-        en: 'High-performance real-time telemetry studio featuring custom canvas nodes, reactive data pipelines, and cinematic 60FPS micro-interactions.',
-      },
-      techStack: ['Vue 3', 'TypeScript', 'Pinia', 'Tailwind CSS', 'GSAP', 'Vite', 'Charts.js'],
-    },
-    mentor: {
-      name: {
-        ar: 'م. نور الحسيني',
-        en: 'Eng. Noor Al-Husseini',
-      },
-      role: {
-        ar: 'Lead Frontend & UI Performance Architect',
-        en: 'Lead Frontend & UI Performance Architect',
-      },
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
-      experience: {
-        ar: 'خبرة 8 سنوات في تصميم وتطوير واجهات المستخدم العالمية',
-        en: '8+ Years crafting award-winning high-performance web UIs',
-      },
-      companyTag: 'Aqavia Core Team',
-    },
-    duration: {
-      ar: '10 أسابيع مكثفة',
-      en: '10 Intensive Weeks',
-    },
-    level: {
-      ar: 'متوسط إلى متقدم',
-      en: 'Intermediate to Advanced',
-    },
-    seatsRemaining: 5,
-  },
-  {
-    id: 'ai-ml-systems',
-    category: 'ai',
-    name: {
-      ar: 'هندسة الذكاء الاصطناعي وتطبيقات النماذج الكبيرة (AI & LLMs)',
-      en: 'Applied AI & Autonomous Agent Engineering',
-    },
-    badge: {
-      ar: 'تقنية المستقبل',
-      en: 'Cutting Edge',
-    },
-    accentColor: '#A855F7',
-    glowColor: 'rgba(168, 85, 247, 0.4)',
-    iconName: 'Brain',
-    overview: {
-      ar: 'بناء ونشر حلول الذكاء الاصطناعي التوليدي العملية، وتطبيق تقنيات RAG المتطورة ودمج وكلاء الذكاء الاصطناعي (AI Autonomous Agents) في أنظمة الإنتاج الحقيقية.',
-      en: 'Design and deploy production-ready Generative AI systems, RAG pipelines, fine-tuned foundational models, and multi-agent workflows with rigorous safety guardrails.',
-    },
-    capstoneProject: {
-      name: {
-        ar: 'نظام CognitiveMed: المساعد التشخيصي الذكي الفوري',
-        en: 'CognitiveMed: Autonomous Clinical Inference System',
-      },
-      type: {
-        ar: 'منظومة وكلاء ذكاء اصطناعي (AI Agentic System)',
-        en: 'Multi-Agent Medical Intelligence System',
-      },
-      description: {
-        ar: 'بناء شبكة وكلاء ذكاء اصطناعي مستقلة قادرة على تحليل السجلات الطبية الضخمة، والبحث المتجهي عبر ملايين المقالات العلمية، وصياغة تقارير استدلالية فورية.',
-        en: 'A multi-agent reasoning architecture analyzing high-volume clinical records with vector embeddings, semantic retrieval, and low-latency inference.',
-      },
-      techStack: ['Python', 'FastAPI', 'LangChain', 'Llama 3', 'Qdrant Vector DB', 'PyTorch'],
-    },
-    mentor: {
-      name: {
-        ar: 'د. إيثان فانس',
-        en: 'Dr. Ethan Vance',
-      },
-      role: {
-        ar: 'Senior AI Research Scientist & LLM Lead',
-        en: 'Senior AI Research Scientist & LLM Lead',
-      },
-      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-      experience: {
-        ar: 'دكتوراه في الذكاء الاصطناعي وباحث سابق في أبحاث وادي السيليكون',
-        en: 'PhD in Computer Science, Silicon Valley AI Lab alumnus',
-      },
-      companyTag: 'Aqavia US R&D',
-    },
-    duration: {
-      ar: '14 أسبوع مكثف',
-      en: '14 Intensive Weeks',
-    },
-    level: {
-      ar: 'متقدم (Advanced)',
-      en: 'Advanced',
-    },
-    seatsRemaining: 2,
-  },
-  {
-    id: 'ui-ux-design',
-    category: 'design',
-    name: {
-      ar: 'تصميم المنتجات الرقمية وهندسة الأنظمة (UI/UX Design Systems)',
-      en: 'Digital Product Design & Enterprise UX Systems',
-    },
-    badge: {
-      ar: 'تصميم تجارب عالمية',
-      en: 'World-Class UX',
-    },
-    accentColor: '#F59E0B',
-    glowColor: 'rgba(245, 158, 11, 0.4)',
-    iconName: 'Palette',
-    overview: {
-      ar: 'من أبحاث المستخدم المعمقة (UX Research) وتصميم رحلة العميل إلى بناء أنظمة التصميم البرمجية (Design Systems) المتوافقة مع الكود والبروتوتايب التفاعلي.',
-      en: 'From qualitative UX research and information architecture to architecting production design tokens, scalable component libraries, and micro-interaction prototypes.',
-    },
-    capstoneProject: {
-      name: {
-        ar: 'نظام Vanguard المصرفي وأنظمة التداول العالمية',
-        en: 'Vanguard Global Banking & Trading Design System',
-      },
-      type: {
-        ar: 'نظام تصميم ومكتبة مكونات مؤسسية (Design System)',
-        en: 'Multi-Brand Enterprise Banking Design System',
-      },
-      description: {
-        ar: 'إنشاء نظام تصميم شامل يضم أكثر من 250 مكوّن مخصص، مع اختبارات إمكانية الوصول (Accessibility A11y)، وتوثيق كامل متصل مع كود Flutter و Vue.',
-        en: 'A production design system containing 250+ accessible components, responsive grid mechanics, interactive prototypes, and direct developer handoff specs.',
-      },
-      techStack: ['Figma Pro', 'Tokens Studio', 'Zeroheight', 'A11y Standards', 'Interactive Prototyping'],
-    },
-    mentor: {
-      name: {
-        ar: 'سارة جينكينز',
-        en: 'Sarah Jenkins',
-      },
-      role: {
-        ar: 'VP of Product Design & Global UX Strategist',
-        en: 'VP of Product Design & Global UX Strategist',
-      },
-      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80',
-      experience: {
-        ar: 'خبرة 11 عاماً في قيادة فرق التصميم لمنتجات Fintech و SaaS',
-        en: '11+ Years leading product design for hyper-growth SaaS',
-      },
-      companyTag: 'Aqavia Design Guild',
-    },
-    duration: {
-      ar: '10 أسابيع مكثفة',
-      en: '10 Intensive Weeks',
-    },
-    level: {
-      ar: 'جميع المستويات حتى الاحتراف',
-      en: 'Comprehensive / Industry Ready',
-    },
-    seatsRemaining: 4,
-  },
-  {
-    id: 'fullstack-web',
-    category: 'fullstack',
-    name: {
-      ar: 'هندسة الويب المتكاملة الشاملة (Full-Stack: Laravel & Vue 3)',
-      en: 'Enterprise Full-Stack Web Engineering (Laravel + Vue 3)',
-    },
-    badge: {
-      ar: 'المسار الأكثر تكاملاً',
-      en: 'End-to-End Mastery',
-    },
-    accentColor: '#06B6D4',
-    glowColor: 'rgba(6, 182, 212, 0.4)',
-    iconName: 'Layers',
-    overview: {
-      ar: 'الربط المعماري الكامل بين واجهات Vue 3 الحديثة ومخدمات Laravel 11 المتطورة، مع بناء أنظمة التخزين المؤقت، والمصادقة المتقدمة عبر JWT و OAuth2، وبوابات الدفع الإلكتروني.',
-      en: 'Seamlessly bridge reactive Vue 3 SPAs with high-throughput Laravel 11 backends, mastering JWT/OAuth2 security, Redis pipelines, payment gateways, and end-to-end testing.',
-    },
-    capstoneProject: {
-      name: {
-        ar: 'منصة HyperCommerce B2B العالمية وإدارة سلاسل الإمداد',
-        en: 'HyperCommerce Global B2B Marketplace & ERP Platform',
-      },
-      type: {
-        ar: 'منصة تجارة إلكترونية مؤسسية متكاملة',
-        en: 'Enterprise Full-Stack Commerce Ecosystem',
-      },
-      description: {
-        ar: 'بناء نظام B2B كامل لإدارة الموردين والطلبات المتزامنة مع تحديثات حية، بوابات دفع عالمية ومحلية، ولوحة تحكم إدارية متقدمة بتقنيات الـ Reactive State.',
-        en: 'End-to-end commerce suite supporting multi-currency transactions, live inventory syncing via WebSockets, and granular role-based administrative dashboards.',
-      },
-      techStack: ['Laravel 11', 'Vue 3', 'TypeScript', 'Pinia', 'Tailwind CSS', 'PostgreSQL', 'Stripe API'],
-    },
-    mentor: {
-      name: {
-        ar: 'م. حسام التميمي',
-        en: 'Eng. Hussam Al-Tamimi',
-      },
-      role: {
-        ar: 'Principal Full-Stack Solutions Architect',
-        en: 'Principal Full-Stack Solutions Architect',
-      },
-      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
-      experience: {
-        ar: 'خبرة 10 سنوات في قيادة المشاريع التقنية للشركات الناشئة والمؤسسات',
-        en: '10+ Years leading full-stack product engineering',
-      },
-      companyTag: 'Aqavia Senior Faculty',
-      linkedin: 'https://linkedin.com',
-    },
-    duration: {
-      ar: '14 أسبوع مكثف',
-      en: '14 Intensive Weeks',
-    },
-    level: {
-      ar: 'متوسط إلى متقدم',
-      en: 'Intermediate to Advanced',
-    },
-    seatsRemaining: 4,
-  },
-  {
-    id: 'devops-cloud',
-    category: 'devops',
-    name: {
-      ar: 'هندسة السحاب والبنية التحتية المؤتمتة (DevOps & Kubernetes)',
-      en: 'Cloud Systems, SRE & Container Orchestration (DevOps)',
-    },
-    badge: {
-      ar: 'أنظمة الإنتاج السحابي',
-      en: 'Cloud & Infrastructure',
-    },
-    accentColor: '#10B981',
-    glowColor: 'rgba(16, 185, 129, 0.4)',
-    iconName: 'Cloud',
-    overview: {
-      ar: 'أتمتة دورات نشر التطبيقات عبر الـ CI/CD Pipelines، وإدارة الحاويات بـ Docker & Kubernetes، وتطبيق معايير Infrastructure as Code (Terraform) ومراقبة الأنظمة الحية.',
-      en: 'Master automated CI/CD deployment pipelines, container orchestration with Kubernetes, Infrastructure as Code (Terraform), and full-stack observability with Prometheus and Grafana.',
-    },
-    capstoneProject: {
-      name: {
-        ar: 'بنية Titan السحابية الموزعة ومنظومة المراقبة الذاتية',
-        en: 'Titan Resilient Cloud Infrastructure & Auto-Scaling Cluster',
-      },
-      type: {
-        ar: 'بنية تحتية سحابية عالية الإتاحة (High Availability SRE)',
-        en: 'Zero-Downtime Multi-Region Cloud Architecture',
-      },
-      description: {
-        ar: 'تصميم وتشغيل كلاستر Kubernetes متعدد المناطق مع التوسعة التلقائية (Auto-scaling)، ومراقبة مؤشرات الأداء الحية واكتشاف الأعطال ومعالجتها تلقائياً.',
-        en: 'Architecting a zero-downtime multi-node K8s cluster with automated failover, blue-green deployment pipelines, and centralized distributed tracing.',
-      },
-      techStack: ['Docker', 'Kubernetes', 'AWS', 'Terraform', 'GitHub Actions', 'Prometheus', 'Grafana'],
-    },
-    mentor: {
-      name: {
-        ar: 'م. ديفيد تشين',
-        en: 'David Chen',
-      },
-      role: {
-        ar: 'Principal SRE & Cloud Architect',
-        en: 'Principal SRE & Cloud Architect',
-      },
-      avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80',
-      experience: {
-        ar: 'خبرة 12 عاماً في إدارة البنى السحابية العملاقة وموثوقية الأنظمة',
-        en: '12+ Years managing high-throughput cloud clusters',
-      },
-      companyTag: 'Ex-AWS Solutions Architect',
-      linkedin: 'https://linkedin.com',
-    },
+    registrationUrl: 'https://forms.gle/jSx7Kh73dWGd2kCfA',
     duration: {
       ar: '12 أسبوع مكثف',
       en: '12 Intensive Weeks',
     },
     level: {
-      ar: 'متقدم (Advanced)',
-      en: 'Advanced',
+      ar: 'تطبيقي متقدم',
+      en: 'Hands-on Advanced',
     },
     seatsRemaining: 3,
+  },
+  {
+    id: 'uiux-design',
+    category: 'uiux',
+    groupType: 'technical_internship',
+    name: {
+      ar: 'تصميم الواجهات وتجربة المستخدم: UI/UX',
+      en: 'Product Design & UI/UX Systems',
+    },
+    badge: {
+      ar: 'مشاريع عملية • يتطلب الأساسيات',
+      en: 'Production Projects • Prerequisites Required',
+    },
+    accentColor: '#F59E0B',
+    glowColor: 'rgba(245, 158, 11, 0.4)',
+    iconName: 'Palette',
+    prerequisites: {
+      ar: 'معرفة التعامل مع أداة Figma ومبادئ التصميم البصري (الألوان، الخطوط، والتسلسل البصري).',
+      en: 'Working knowledge of Figma and visual design fundamentals (color, typography, visual hierarchy).',
+    },
+    outcomes: {
+      ar: 'تنفيذ أبحاث المستخدم، بناء Design Systems متكاملة، تصميم ونمذجة تفاعلية كاملة، وتسليم ملفات التصميم للمطورين.',
+      en: 'Conducting user research, architecting complete Design Systems, interactive prototyping, and developer handoffs.',
+    },
+    registrationUrl: 'https://forms.gle/jSx7Kh73dWGd2kCfA',
+    duration: {
+      ar: '10 أسابيع مكثفة',
+      en: '10 Intensive Weeks',
+    },
+    level: {
+      ar: 'تطبيقي متقدم',
+      en: 'Hands-on Advanced',
+    },
+    seatsRemaining: 4,
+  },
+  {
+    id: 'react-frontend',
+    category: 'frontend',
+    groupType: 'technical_internship',
+    name: {
+      ar: 'تطوير الواجهات: Frontend (React.js)',
+      en: 'Modern Frontend Engineering (React.js)',
+    },
+    badge: {
+      ar: 'مشاريع عملية • يتطلب الأساسيات',
+      en: 'Production Projects • Prerequisites Required',
+    },
+    accentColor: '#0EA5E9',
+    glowColor: 'rgba(14, 165, 233, 0.4)',
+    iconName: 'Layout',
+    prerequisites: {
+      ar: 'إتقان HTML5, CSS3, JavaScript (ES6+)، وأساسيات React (Components, Hooks, State).',
+      en: 'Mastery of HTML5, CSS3, modern JavaScript (ES6+), and core React concepts (Components, Hooks, State).',
+    },
+    outcomes: {
+      ar: 'بناء تطبيقات ويب متكاملة، التعامل مع RESTful APIs، إدارة الحالة المتقدمة، ورفع مشاريع حية جاهزة للعرض على GitHub.',
+      en: 'Building full-featured web applications, consuming RESTful APIs, state management, and deploying live portfolio code to GitHub.',
+    },
+    registrationUrl: 'https://forms.gle/jSx7Kh73dWGd2kCfA',
+    duration: {
+      ar: '12 أسبوع مكثف',
+      en: '12 Intensive Weeks',
+    },
+    level: {
+      ar: 'تطبيقي متقدم',
+      en: 'Hands-on Advanced',
+    },
+    seatsRemaining: 4,
+  },
+  {
+    id: 'flutter-mobile',
+    category: 'mobile',
+    groupType: 'technical_internship',
+    name: {
+      ar: 'تطبيقات الموبايل: Mobile (Flutter)',
+      en: 'Mobile App Engineering (Flutter & Dart)',
+    },
+    badge: {
+      ar: 'مشاريع عملية • يتطلب الأساسيات',
+      en: 'Production Projects • Prerequisites Required',
+    },
+    accentColor: '#38BDF8',
+    glowColor: 'rgba(56, 189, 248, 0.4)',
+    iconName: 'Smartphone',
+    prerequisites: {
+      ar: 'أساسيات لغة Dart والبرمجة كائنية التوجه (OOP) ومفاهيم الـ Widgets الأساسية في فلاتر.',
+      en: 'Dart fundamentals, Object-Oriented Programming (OOP), and foundational Flutter Widgets concepts.',
+    },
+    outcomes: {
+      ar: 'برمجة تطبيقات Cross-Platform متكاملة، تطبيق State Management احترافي، الربط مع الـ APIs، وتجهيز التطبيقات للمتاجر.',
+      en: 'Cross-platform app development, enterprise state management (BLoC/Riverpod), API integration, and app store deployment.',
+    },
+    registrationUrl: 'https://forms.gle/jSx7Kh73dWGd2kCfA',
+    duration: {
+      ar: '12 أسبوع مكثف',
+      en: '12 Intensive Weeks',
+    },
+    level: {
+      ar: 'تطبيقي متقدم',
+      en: 'Hands-on Advanced',
+    },
+    seatsRemaining: 4,
+  },
+  {
+    id: 'ai-foundation',
+    category: 'ai',
+    groupType: 'technical_internship',
+    name: {
+      ar: 'مسار الذكاء الاصطناعي الأساسي: AI Foundation & Machine Learning',
+      en: 'AI Foundation & Applied Machine Learning',
+    },
+    badge: {
+      ar: 'مشاريع عملية • يتطلب الأساسيات',
+      en: 'Production Projects • Prerequisites Required',
+    },
+    accentColor: '#10B981',
+    glowColor: 'rgba(16, 185, 129, 0.4)',
+    iconName: 'Brain',
+    prerequisites: {
+      ar: 'إلمام بلغة Python ومفاهيم الإحصاء والجبر الخطي البسيطة.',
+      en: 'Familiarity with Python, basic statistics, and linear algebra principles.',
+    },
+    outcomes: {
+      ar: 'معالجة وتنظيف البيانات، تطبيق خوارزميات تعلم الآلة الكلاسيكية، وتطوير نماذج ذكاء اصطناعي تنبؤية جاهزة للاستخدام في تطبيقات واقعية.',
+      en: 'Data preprocessing, classical machine learning algorithms, and predictive AI model development for real-world applications.',
+    },
+    registrationUrl: 'https://forms.gle/jSx7Kh73dWGd2kCfA',
+    duration: {
+      ar: '10 أسابيع مكثفة',
+      en: '10 Intensive Weeks',
+    },
+    level: {
+      ar: 'تأسيسي تطبيقي',
+      en: 'Applied Foundation',
+    },
+    seatsRemaining: 3,
+  },
+  {
+    id: 'architecture-comprehensive',
+    category: 'architecture',
+    groupType: 'advanced_special',
+    name: {
+      ar: 'مسار الهندسة المعمارية الشامل (Architecture)',
+      en: 'Comprehensive Architectural Engineering Track',
+    },
+    badge: {
+      ar: 'يبدأ من الصفر التام',
+      en: 'Starts From Ground Zero',
+    },
+    accentColor: '#EAB308',
+    glowColor: 'rgba(234, 179, 8, 0.4)',
+    iconName: 'Compass',
+    prerequisites: {
+      ar: 'لا يتطلب أي معرفة مسبقة بالبرمجيات الهندسية.',
+      en: 'Requires zero prior knowledge of engineering or CAD software.',
+    },
+    outcomes: {
+      ar: 'كورس متكامل يبدأ من أساسيات الرسم والنمذجة المعمارية، قراءة المخططات التنفيذية، واستخدام برامج AutoCAD و 3D Rendering وصولاً للتدريب على مشاريع ضخمة وبناء بورتفوليو معماري منافس.',
+      en: 'Complete course from architectural drafting, blueprint interpretation, AutoCAD and 3D Rendering, culminating in large-scale capstones and a competitive architectural portfolio.',
+    },
+    registrationUrl: 'https://forms.gle/f9sDsSgYY7RYXsdS8',
+    duration: {
+      ar: '14 أسبوع مكثف',
+      en: '14 Intensive Weeks',
+    },
+    level: {
+      ar: 'من الصفر للاحتراف',
+      en: 'Zero to Professional',
+    },
+    seatsRemaining: 5,
+  },
+  {
+    id: 'advanced-ai',
+    category: 'ai',
+    groupType: 'advanced_special',
+    name: {
+      ar: 'الذكاء الاصطناعي المتقدم (Advanced AI)',
+      en: 'Advanced AI & Large Language Models',
+    },
+    badge: {
+      ar: 'مكثف ومتقدم',
+      en: 'Intensive & Advanced',
+    },
+    accentColor: '#A855F7',
+    glowColor: 'rgba(168, 85, 247, 0.4)',
+    iconName: 'Cpu',
+    prerequisites: {
+      ar: 'خبرة ممتازة بلغة Python ومفاهيم Deep Learning و PyTorch/TensorFlow.',
+      en: 'Extensive Python experience, deep learning fundamentals, and PyTorch/TensorFlow proficiency.',
+    },
+    outcomes: {
+      ar: 'نماذج اللغة التوليدية (LLMs)، هندسة الـ RAG، خوارزميات الرؤية الحاسوبية المتقدمة، وتجهيز النماذج للإنتاج (Deployment).',
+      en: 'Generative foundational LLMs, RAG system design, advanced computer vision algorithms, and enterprise production model deployment.',
+    },
+    registrationUrl: 'https://forms.gle/QTumH99Dmkqf76tf9',
+    duration: {
+      ar: '12 أسبوع مكثف',
+      en: '12 Intensive Weeks',
+    },
+    level: {
+      ar: 'متقدم / خبير',
+      en: 'Advanced / Expert',
+    },
+    seatsRemaining: 2,
   },
 ]

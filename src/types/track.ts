@@ -1,4 +1,4 @@
-export type TrackCategory = 'all' | 'mobile' | 'backend' | 'frontend' | 'fullstack' | 'ai' | 'devops' | 'design'
+export type TrackCategory = 'all' | 'backend' | 'uiux' | 'frontend' | 'mobile' | 'ai' | 'architecture'
 
 export interface LocalizedString {
   ar: string
@@ -24,14 +24,18 @@ export interface Mentor {
 export interface TrackItem {
   id: string
   category: TrackCategory
+  groupType: 'technical_internship' | 'advanced_special'
   name: LocalizedString
   badge: LocalizedString
   accentColor: string
   glowColor: string
-  iconName: 'Smartphone' | 'Server' | 'Layout' | 'Layers' | 'Brain' | 'Cloud' | 'Palette'
-  overview: LocalizedString
-  capstoneProject: CapstoneProject
-  mentor: Mentor
+  iconName: 'Server' | 'Palette' | 'Layout' | 'Smartphone' | 'Brain' | 'Compass' | 'Cpu'
+  prerequisites: LocalizedString
+  outcomes: LocalizedString
+  registrationUrl: string
+  overview?: LocalizedString
+  capstoneProject?: CapstoneProject
+  mentor?: Mentor
   duration: LocalizedString
   level: LocalizedString
   seatsRemaining: number
