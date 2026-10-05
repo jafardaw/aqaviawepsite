@@ -2,259 +2,276 @@
 import { useLanguage } from '../../composables/useLanguage'
 import { useApplicationModal } from '../../composables/useApplicationModal'
 import { 
-  Briefcase, 
-  XCircle, 
+  AlertTriangle, 
   CheckCircle2, 
+  XCircle, 
+  Sparkles, 
+  ArrowUpRight, 
   GitPullRequest, 
-  Cpu, 
-  Award, 
-  ArrowUpRight,
-  Sparkles,
-  Zap
+  Layers, 
+  Users, 
+  Award,
+  BookOpen
 } from 'lucide-vue-next'
 
 const { isArabic } = useLanguage()
 const { openModal } = useApplicationModal()
 
-const comparisonPoints = [
+const comparisonAxes = [
   {
-    traditional: {
-      ar: 'مشاهدة فيديوهات مسجلة سلبية بدون تفاعل أو تحديات غير متوقعة',
-      en: 'Passive video streaming without hands-on blockers or real architectural dilemmas',
+    axis: {
+      ar: 'المحتوى والمنهج',
+      en: 'Curriculum & Methodology'
     },
+    icon: BookOpen,
+    accent: '#38BDF8',
     aqavia: {
-      ar: 'محاكاة بيئة العمل الواقعية في كبرى شركات التقنية مع سبرنتات Agile يومية',
-      en: 'Real enterprise Agile sprints, ticketing workflows, and production edge-case handling',
+      ar: 'تطبيق عملي 100% على متطلبات وتاسكات مشاريع حقيقية تُبنى بالكامل.',
+      en: '100% hands-on implementation on live tasks & full-scale production projects.'
+    },
+    traditional: {
+      ar: 'محاضرات نظرية، شروحات مسجلة، وتلقين للأساسيات البرمجية البسيطة.',
+      en: 'Passive theoretical videos, recorded playlists, and basic script tutorials.'
     }
   },
   {
-    traditional: {
-      ar: 'مشاريع نمطية مكررة (To-Do List, Blog) لا تثير اهتمام مديري التوظيف',
-      en: 'Toy projects (basic to-do apps) copied line-by-line with zero production viability',
+    axis: {
+      ar: 'بيئة العمل اليومية',
+      en: 'Daily Working Environment'
     },
+    icon: Users,
+    accent: '#F3CE66',
     aqavia: {
-      ar: 'بناء مشاريع تخرج ضخمة بمعمارية Clean Architecture وأنظمة موثوقة متعددة المستأجرين',
-      en: 'Architecting high-scale capstones with Clean Architecture, microservices, and live data telemetry',
+      ar: 'محاكاة واقعية لفرق العمل: استخدام Git, GitHub, Sprints, Agile، وتقسيم الأدوار.',
+      en: 'Authentic team simulation: Git, GitHub, weekly Agile sprints, and role distribution.'
+    },
+    traditional: {
+      ar: 'عمل فردي معزول دون احتكاك بالزملاء أو منظومة عمل الشركات.',
+      en: 'Isolated individual coding with zero interaction with team pipelines or corporate tooling.'
     }
   },
   {
-    traditional: {
-      ar: 'انعدام مراجعة الكود، مما يرسخ عادات برمجية خاطئة وأسلوب Spaghetti Code',
-      en: 'Zero code reviews: bad design patterns go uncorrected and anti-patterns solidify',
+    axis: {
+      ar: 'التوجيه والمتابعة',
+      en: 'Mentorship & Supervision'
     },
-    aqavia: {
-      ar: 'مراجعة كود شخصية سطر بسطر (1-on-1 Code Review) من مهندسين كبار لكل Pull Request',
-      en: 'Strict 1-on-1 Senior Code Review for every single PR before merging to the mainline branch',
-    }
-  },
-  {
-    traditional: {
-      ar: 'الوقوع في دوامة الشروحات (Tutorial Hell) والعجز أمام مقابلات الـ System Design',
-      en: 'Getting stuck in tutorial hell, unable to defend architectural choices in tech interviews',
-    },
-    aqavia: {
-      ar: 'جاهزية احترافية فورية وسجل GitHub موثق وتوصية مهنية على LinkedIn من المشرفين',
-      en: 'Production-tested GitHub portfolio, system design fluency, and senior LinkedIn endorsements',
-    }
-  },
-]
-
-const sprintCycle = [
-  {
-    step: '01',
-    title: { ar: 'تخطيط السبرنت والمهام', en: 'Sprint Planning & User Stories' },
-    desc: { ar: 'توزيع تذاكر المهام وفق متطلبات واقعية محددة المعايير (Acceptance Criteria).', en: 'Breaking complex features into structured engineering tickets.' },
-    icon: Zap,
-    color: '#38BDF8'
-  },
-  {
-    step: '02',
-    title: { ar: 'التطوير بمعمارية قياسية', en: 'Clean Architecture Build' },
-    desc: { ar: 'بناء الميزات وفق مبادئ SOLID و Clean Code وتغطية اختبارات مؤتمتة.', en: 'Implementing modular domain layers and unit/widget test suites.' },
-    icon: Cpu,
-    color: '#F3CE66'
-  },
-  {
-    step: '03',
-    title: { ar: 'مراجعة الكود والـ PRs', en: '1-on-1 Code Review' },
-    desc: { ar: 'مناقشة مباشرة مع المشرف لإعادة هيكلة الكود ورفع كفاءة استهلاك الموارد.', en: 'In-depth PR line comments, refactoring feedback, and performance audits.' },
     icon: GitPullRequest,
-    color: '#42B883'
+    accent: '#42B883',
+    aqavia: {
+      ar: 'مراجعة مستمرة للكود (Code Review)، توجيه معماري، وتحسين الأداء والأمان.',
+      en: 'Continuous 1-on-1 code reviews, architectural guidance, performance & security audits.'
+    },
+    traditional: {
+      ar: 'إجابة استفسارات سطحية دون نقد للكود أو أداء النظام.',
+      en: 'Superficial Q&A forums without system scrutiny, profiling, or architectural refactoring.'
+    }
   },
   {
-    step: '04',
-    title: { ar: 'النشر والاعتماد النهائي', en: 'Production Deploy & Portfolio' },
-    desc: { ar: 'دمج الكود في بيئة الإنتاج واعتماد الميزة في ملف أعمالك البرمجي الموثق.', en: 'Automated CI/CD staging build and career portfolio milestone unlocked.' },
+    axis: {
+      ar: 'المخرجات النهائية',
+      en: 'Final Concrete Outcomes'
+    },
     icon: Award,
-    color: '#A855F7'
-  },
+    accent: '#A855F7',
+    aqavia: {
+      ar: 'مشاريع حية وموثقة في معرض الأعمال (GitHub / Portfolio) تدعم الـ CV بقوة.',
+      en: 'Production repos documented on GitHub & live portfolio that powerfully backs your CV.'
+    },
+    traditional: {
+      ar: 'شهادة حضور دورة غالباً لا تعترف بها الشركات بدون مشاريع.',
+      en: 'Paper attendance certificates usually overlooked by hiring leads without live code proof.'
+    }
+  }
 ]
 </script>
 
 <template>
   <section 
     id="internship" 
-    class="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden"
+    class="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden"
   >
-    <!-- Background Glows -->
-    <div class="absolute top-1/2 left-0 w-96 h-96 bg-[#12295D]/25 blur-[120px] rounded-full pointer-events-none -z-10"></div>
-    <div class="absolute bottom-10 right-0 w-96 h-96 bg-[#F3CE66]/15 blur-[140px] rounded-full pointer-events-none -z-10"></div>
+    <!-- Background Ambient Glow -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-r from-[#12295D]/30 via-[#F3CE66]/15 to-[#2B5DE0]/20 blur-[140px] rounded-full pointer-events-none -z-10"></div>
 
     <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16 sm:mb-20">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#12295D]/50 border border-[#F3CE66]/30 shadow-inner">
-        <Briefcase class="w-4 h-4 text-[#F3CE66]" />
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-12 sm:mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#12295D]/50 border border-[#F3CE66]/35 shadow-inner">
+        <Sparkles class="w-4 h-4 text-[#F3CE66]" />
         <span class="text-xs sm:text-sm font-bold text-[#F3CE66] tracking-wide uppercase">
-          {{ isArabic ? 'ما هو التدريب الداخلي في أكافيا؟' : 'The Aqavia Internship Concept' }}
+          {{ isArabic ? 'مفهوم التدريب الداخلي وفارق الكورسات' : 'The Internship Concept & Course Differentiation' }}
         </span>
       </div>
 
       <h2 class="text-3xl sm:text-5xl font-black text-white dark:text-white light:text-[#0B1A3D] tracking-tight leading-tight">
-        <span>{{ isArabic ? 'الفارق الجوهري: ' : 'The Decisive Shift: ' }}</span>
-        <span class="gold-gradient-text">{{ isArabic ? 'ليس مجرد كورس، بل بيئة عمل حقيقية' : 'Not a Course, A Living Tech Hub' }}</span>
+        <span>{{ isArabic ? 'الفارق الجوهري: ' : 'The Fundamental Difference: ' }}</span>
+        <span class="gold-gradient-text">{{ isArabic ? 'لسنا دورة تعليمية، بل بيئة عمل حقيقية' : 'Not a Course, An Authentic Tech Environment' }}</span>
       </h2>
 
-      <p class="text-sm sm:text-base text-slate-400 dark:text-slate-400 light:text-slate-600 leading-relaxed max-w-2xl mx-auto">
+      <p class="text-sm sm:text-base text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
         {{ isArabic 
-          ? 'معظم المتعلمين يملكون معلومات نظرية لكنهم يتعثرون عند أول مقابلة عمل أو مشروع فعلي. صممنا التدريب الداخلي لسد هذه الفجوة عبر معايشة كاملة لبيئة شركات التكنولوجيا العالمية.'
-          : 'Traditional courses dump theoretical knowledge without real context. Aqavia is engineered as an intensive apprenticeship where you ship code under senior guidance.'
+          ? 'صُممت أكافيا لمن يملك المعرفة الأساسية ويبحث عن القفزة الحقيقية نحو الاحتراف وسوق العمل: العمل على كود إنتاجي ضخم، بمراجعات صارمة ومحاكاة دقيقة لشركات البرمجة.'
+          : 'Aqavia is engineered for aspiring developers who already possess fundamentals and seek the decisive leap to production: building large-scale codebases under senior scrutiny.'
         }}
       </p>
     </div>
 
-    <!-- The Side-by-Side Comparison Matrix -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20 items-stretch">
-      <!-- Traditional Courses Card -->
-      <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/40 dark:bg-slate-900/40 light:bg-slate-100/80 border border-red-500/20 shadow-xl flex flex-col justify-between">
-        <div class="space-y-6">
-          <div class="flex items-center justify-between pb-4 border-b border-red-500/20">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center">
-                <XCircle class="w-5 h-5 text-red-400" />
-              </div>
-              <h3 class="text-lg sm:text-xl font-bold text-white dark:text-white light:text-slate-900">
-                {{ isArabic ? 'الكورسات التقليدية واليوتيوب' : 'Traditional Video Courses' }}
-              </h3>
-            </div>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">
-              {{ isArabic ? 'تعليم سلبي' : 'Passive Theory' }}
+    <!-- ⚠️ Prominent Banner Alert (تنبيه هام ومحكم للمتقدمين) -->
+    <div class="mb-14 sm:mb-16 p-5 sm:p-7 rounded-3xl bg-gradient-to-r from-[#2A1805]/90 via-[#181106]/95 to-[#2A1805]/90 border-2 border-[#F59E0B]/60 shadow-2xl shadow-amber-950/40 relative overflow-hidden">
+      <!-- Glow accent -->
+      <div class="absolute -top-12 -right-12 w-40 h-40 bg-[#F59E0B]/20 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 relative z-10">
+        <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/50 flex items-center justify-center shrink-0 shadow-lg">
+          <AlertTriangle class="w-6 h-6 text-amber-400" />
+        </div>
+
+        <div class="space-y-1.5 flex-1 text-start">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-black px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 uppercase tracking-wider">
+              {{ isArabic ? 'تنبيه هام للمتقدمين' : 'Important Notice for Applicants' }}
             </span>
           </div>
 
-          <div class="space-y-4">
-            <div 
-              v-for="(point, idx) in comparisonPoints" 
-              :key="idx"
-              class="flex items-start gap-3 p-3.5 rounded-2xl bg-black/20 dark:bg-black/20 light:bg-white/60 border border-red-500/10"
-            >
-              <div class="w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center shrink-0 mt-0.5">
-                <span class="text-xs font-black">✕</span>
-              </div>
-              <p class="text-xs sm:text-sm text-slate-300 dark:text-slate-300 light:text-slate-700 leading-relaxed">
-                {{ isArabic ? point.traditional.ar : point.traditional.en }}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-6 pt-4 border-t border-slate-800 text-center">
-          <span class="text-xs text-slate-500 dark:text-slate-500 light:text-slate-600 font-medium">
-            {{ isArabic ? 'النتيجة: صعوبة بالغة في إقناع الشركات واجتياز المقابلات' : 'Outcome: Stuck in tutorial purgatory with weak portfolio' }}
-          </span>
-        </div>
-      </div>
-
-      <!-- Aqavia Internship Card -->
-      <div class="relative p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-[#0F1A36] via-[#091024] to-[#070B18] border-2 border-[#F3CE66]/40 shadow-2xl shadow-[#F3CE66]/10 flex flex-col justify-between overflow-hidden">
-        <!-- Ambient corner light -->
-        <div class="absolute top-0 right-0 w-48 h-48 bg-[#F3CE66]/15 blur-3xl pointer-events-none"></div>
-
-        <div class="space-y-6 relative z-10">
-          <div class="flex items-center justify-between pb-4 border-b border-[#F3CE66]/30">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-[#F3CE66]/20 border border-[#F3CE66]/50 flex items-center justify-center shadow-md">
-                <CheckCircle2 class="w-5 h-5 text-[#F3CE66]" />
-              </div>
-              <div>
-                <h3 class="text-lg sm:text-xl font-bold text-white dark:text-white light:text-slate-900 flex items-center gap-2">
-                  <span>{{ isArabic ? 'التدريب الداخلي في أكافيا' : 'The Aqavia Internship' }}</span>
-                  <Sparkles class="w-4 h-4 text-[#F3CE66]" />
-                </h3>
-              </div>
-            </div>
-            <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#F3CE66]/20 text-[#F3CE66] border border-[#F3CE66]/40 animate-pulse">
-              {{ isArabic ? 'خبرة عملية موثقة' : 'Production Grade' }}
-            </span>
-          </div>
-
-          <div class="space-y-4">
-            <div 
-              v-for="(point, idx) in comparisonPoints" 
-              :key="idx"
-              class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#12224A]/40 border border-[#F3CE66]/20 hover:border-[#F3CE66]/40 transition-colors"
-            >
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                <CheckCircle2 class="w-3.5 h-3.5" />
-              </div>
-              <p class="text-xs sm:text-sm text-slate-100 font-medium leading-relaxed">
-                {{ isArabic ? point.aqavia.ar : point.aqavia.en }}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-6 pt-4 border-t border-[#F3CE66]/20 flex items-center justify-between relative z-10">
-          <span class="text-xs font-bold text-[#F3CE66]">
-            {{ isArabic ? 'النتيجة: مهندس إنتاجي واثق ينافس في كبرى الشركات' : 'Outcome: Senior-vetted, high-impact software engineer' }}
-          </span>
-          <button 
-            @click="openModal" 
-            type="button"
-            class="inline-flex items-center gap-1.5 text-xs font-bold text-white hover:text-[#F3CE66] transition-colors cursor-pointer"
-          >
-            <span>{{ isArabic ? 'سجل الآن' : 'Apply' }}</span>
-            <ArrowUpRight class="w-3.5 h-3.5" />
-          </button>
+          <p class="text-xs sm:text-sm text-amber-100 font-medium leading-relaxed">
+            {{ isArabic 
+              ? 'مسارات البرمجة، الذكاء الاصطناعي، وتصميم الـ UI/UX ليست دورات لشرح الأساسيات للمبتدئين من الصفر؛ بل تتطلب معرفتك بمبادئ التخصص لتنخرط فوراً في كتابة الكود وبناء المشاريع. (الاستثناء الوحيد هو مسار الهندسة المعمارية الذي يبدأ معك من الصفر التام).'
+              : 'Our programming, AI, and UI/UX tracks are not entry-level beginner courses explaining syntax from scratch; they require foundational familiarity so you can immediately dive into production code and capstones. (The sole exception is the Architecture Track which starts from ground zero).'
+            }}
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- The 4-Stage Apprenticeship Agile Lifecycle -->
-    <div class="mt-8 space-y-8">
-      <div class="text-center max-w-xl mx-auto">
-        <h3 class="text-2xl sm:text-3xl font-extrabold text-white dark:text-white light:text-slate-900">
-          {{ isArabic ? 'كيف تسير دورة العمل خلال التدريب؟' : 'How the Weekly Apprenticeship Sprints Work' }}
-        </h3>
-        <p class="text-xs sm:text-sm text-slate-400 mt-2">
-          {{ isArabic ? 'نظام أسبوعي متكامل يحاكي سير العمل في شركات وادي السيليكون' : 'A structured weekly rhythm mirroring high-velocity tech teams' }}
+    <!-- Structured Comparison Matrix Table (Desktop & Tablet) -->
+    <div class="hidden md:block overflow-hidden rounded-3xl border border-[#F3CE66]/30 bg-[#080D1C]/90 backdrop-blur-xl shadow-2xl shadow-black/80 mb-12">
+      <div class="grid grid-cols-12 bg-slate-900/80 border-b border-slate-800 text-xs font-bold uppercase tracking-wider text-slate-300">
+        <div class="col-span-3 p-4 ps-6 flex items-center gap-2 text-slate-400">
+          <Layers class="w-4 h-4 text-[#F3CE66]" />
+          <span>{{ isArabic ? 'محور المقارنة' : 'Comparison Criterion' }}</span>
+        </div>
+        <div class="col-span-5 p-4 flex items-center gap-2 bg-[#12224A]/40 text-[#F3CE66] border-x border-slate-800/80 font-black">
+          <CheckCircle2 class="w-4 h-4 text-[#F3CE66]" />
+          <span>{{ isArabic ? 'التدريب الداخلي في أكافيا (Internship)' : 'Aqavia Internship Model' }}</span>
+        </div>
+        <div class="col-span-4 p-4 flex items-center gap-2 text-slate-400">
+          <XCircle class="w-4 h-4 text-red-400" />
+          <span>{{ isArabic ? 'الدورات والكورسات التقليدية' : 'Traditional Courses & Videos' }}</span>
+        </div>
+      </div>
+
+      <div 
+        v-for="(item, idx) in comparisonAxes" 
+        :key="idx"
+        class="grid grid-cols-12 border-b last:border-b-0 border-slate-800/80 transition-colors hover:bg-white/[0.02]"
+      >
+        <!-- Axis Title -->
+        <div class="col-span-3 p-5 ps-6 flex items-center gap-3">
+          <div 
+            class="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 border shadow-sm"
+            :style="{ backgroundColor: `${item.accent}15`, borderColor: `${item.accent}40`, color: item.accent }"
+          >
+            <component :is="item.icon" class="w-4 h-4" />
+          </div>
+          <span class="text-sm font-bold text-white">
+            {{ isArabic ? item.axis.ar : item.axis.en }}
+          </span>
+        </div>
+
+        <!-- Aqavia Column (Highlighted Winner) -->
+        <div class="col-span-5 p-5 bg-[#101C3A]/30 border-x border-slate-800/80 flex items-start gap-3">
+          <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+            <CheckCircle2 class="w-3.5 h-3.5" />
+          </div>
+          <p class="text-xs sm:text-sm text-slate-100 font-semibold leading-relaxed">
+            {{ isArabic ? item.aqavia.ar : item.aqavia.en }}
+          </p>
+        </div>
+
+        <!-- Traditional Courses Column -->
+        <div class="col-span-4 p-5 flex items-start gap-3 bg-black/10">
+          <div class="w-5 h-5 rounded-full bg-red-500/15 text-red-400 flex items-center justify-center shrink-0 mt-0.5">
+            <span class="text-xs font-black">✕</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
+            {{ isArabic ? item.traditional.ar : item.traditional.en }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Comparison Cards (Under md) -->
+    <div class="md:hidden space-y-5 mb-12">
+      <div 
+        v-for="(item, idx) in comparisonAxes" 
+        :key="idx"
+        class="p-5 rounded-3xl bg-[#080D1C] border border-slate-800 shadow-xl space-y-4"
+      >
+        <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800">
+          <div 
+            class="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 border"
+            :style="{ backgroundColor: `${item.accent}15`, borderColor: `${item.accent}40`, color: item.accent }"
+          >
+            <component :is="item.icon" class="w-4 h-4" />
+          </div>
+          <h3 class="text-sm font-bold text-white">
+            {{ isArabic ? item.axis.ar : item.axis.en }}
+          </h3>
+        </div>
+
+        <!-- Aqavia Point -->
+        <div class="p-3.5 rounded-2xl bg-[#12224A]/40 border border-[#F3CE66]/25 space-y-1">
+          <div class="flex items-center gap-1.5 text-[11px] font-bold text-[#F3CE66]">
+            <CheckCircle2 class="w-3.5 h-3.5 text-emerald-400" />
+            <span>{{ isArabic ? 'في أكافيا' : 'In Aqavia' }}</span>
+          </div>
+          <p class="text-xs text-slate-100 font-medium leading-relaxed">
+            {{ isArabic ? item.aqavia.ar : item.aqavia.en }}
+          </p>
+        </div>
+
+        <!-- Traditional Point -->
+        <div class="p-3.5 rounded-2xl bg-black/25 border border-red-500/15 space-y-1">
+          <div class="flex items-center gap-1.5 text-[11px] font-bold text-slate-400">
+            <XCircle class="w-3.5 h-3.5 text-red-400" />
+            <span>{{ isArabic ? 'في الكورسات التقليدية' : 'Traditional Courses' }}</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed font-normal">
+            {{ isArabic ? item.traditional.ar : item.traditional.en }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Action CTA -->
+    <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#0C152B] via-[#0E1B38] to-[#0C152B] border border-[#F3CE66]/30 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-start">
+      <div class="space-y-1">
+        <h4 class="text-base sm:text-lg font-black text-white">
+          {{ isArabic ? 'هل تملك الأساسيات وجاهز لبناء مشاريع حقيقية؟' : 'Ready to transition from basic theory to real production?' }}
+        </h4>
+        <p class="text-xs sm:text-sm text-slate-300">
+          {{ isArabic ? 'اختر مسارك المتخصص وابدأ العمل مع فريق وإشراف كبار المهندسين.' : 'Select your specialization track and join structured engineering sprints.' }}
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div 
-          v-for="sprint in sprintCycle" 
-          :key="sprint.step"
-          class="p-6 rounded-3xl bg-[#090E1D] border border-slate-800 hover:border-[#F3CE66]/40 transition-all duration-300 relative group"
+      <div class="flex items-center gap-3 shrink-0">
+        <a 
+          href="#tracks"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm
+                 bg-gradient-to-r from-[#C89B3C] via-[#F3CE66] to-[#C89B3C] text-[#050811]
+                 shadow-lg shadow-[#F3CE66]/20 hover:shadow-[#F3CE66]/40 hover:scale-105 active:scale-95 transition-all cursor-pointer"
         >
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-2xl font-black text-slate-700 group-hover:text-[#F3CE66] transition-colors">
-              {{ sprint.step }}
-            </span>
-            <div 
-              class="w-10 h-10 rounded-xl flex items-center justify-center border"
-              :style="{ backgroundColor: `${sprint.color}15`, borderColor: `${sprint.color}40`, color: sprint.color }"
-            >
-              <component :is="sprint.icon" class="w-5 h-5" />
-            </div>
-          </div>
+          <span>{{ isArabic ? 'استكشف المسارات الـ 7' : 'Explore The 7 Tracks' }}</span>
+          <ArrowUpRight class="w-4 h-4" />
+        </a>
 
-          <h4 class="text-base font-bold text-white mb-2">
-            {{ isArabic ? sprint.title.ar : sprint.title.en }}
-          </h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            {{ isArabic ? sprint.desc.ar : sprint.desc.en }}
-          </p>
-        </div>
+        <button 
+          @click="openModal"
+          type="button"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-full font-semibold text-xs sm:text-sm
+                 bg-slate-900 text-slate-200 border border-slate-700 hover:border-[#F3CE66]/50 hover:text-white transition-all cursor-pointer"
+        >
+          <span>{{ isArabic ? 'سجّل الآن' : 'Apply Now' }}</span>
+        </button>
       </div>
     </div>
   </section>

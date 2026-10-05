@@ -16,11 +16,11 @@ import FaqSection from '../components/sections/FaqSection.vue'
     <!-- 1. الرئيسية: Hero Section (3D Emblem & Company Bio) -->
     <HeroSection />
 
-    <!-- 2. عن أكافيا: About Us & Real-World Apprenticeship Model -->
-    <AboutSection />
-
-    <!-- 3. ما هو التدريب الداخلي؟ The Internship Concept: Core Difference from Traditional Courses -->
+    <!-- 2. مفهوم التدريب الداخلي وفارق الكورسات (The Internship Concept & Core Difference) -->
     <InternshipConceptSection />
+
+    <!-- 3. عن أكافيا: About Us & Operational Arms -->
+    <AboutSection />
 
     <!-- 4. المسارات التدريبية: The 7 Technical Specialization Tracks & Capstone Projects -->
     <TracksSection />
