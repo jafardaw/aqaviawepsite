@@ -15,11 +15,13 @@ const { isArabic } = useLanguage()
 const selectedCategory = ref<TrackCategory>('all')
 
 const categories = [
-  { id: 'all' as TrackCategory, label: { ar: 'كافة المسارات', en: 'All Tracks' } },
+  { id: 'all' as TrackCategory, label: { ar: 'كافة المسارات (7)', en: 'All Tracks (7)' } },
   { id: 'mobile' as TrackCategory, label: { ar: 'تطبيقات الموبايل (Flutter)', en: 'Mobile (Flutter)' } },
   { id: 'backend' as TrackCategory, label: { ar: 'الأنظمة الخلفية (Laravel)', en: 'Backend (Laravel)' } },
   { id: 'frontend' as TrackCategory, label: { ar: 'واجهات الويب (Vue 3)', en: 'Web (Vue 3)' } },
+  { id: 'fullstack' as TrackCategory, label: { ar: 'الويب المتكامل (Full-Stack)', en: 'Full-Stack Web' } },
   { id: 'ai' as TrackCategory, label: { ar: 'الذكاء الاصطناعي (AI/LLMs)', en: 'AI & Data' } },
+  { id: 'devops' as TrackCategory, label: { ar: 'السحاب والـ DevOps', en: 'DevOps & Cloud' } },
   { id: 'design' as TrackCategory, label: { ar: 'تصميم المنتجات (UI/UX)', en: 'UI/UX Design' } },
 ]
 

@@ -1,4 +1,4 @@
-export type TrackCategory = 'all' | 'mobile' | 'backend' | 'frontend' | 'ai' | 'design'
+export type TrackCategory = 'all' | 'mobile' | 'backend' | 'frontend' | 'fullstack' | 'ai' | 'devops' | 'design'
 
 export interface LocalizedString {
   ar: string
@@ -18,6 +18,7 @@ export interface Mentor {
   avatar: string
   experience: LocalizedString
   companyTag: string
+  linkedin?: string
 }
 
 export interface TrackItem {
@@ -27,7 +28,7 @@ export interface TrackItem {
   badge: LocalizedString
   accentColor: string
   glowColor: string
-  iconName: 'Smartphone' | 'Server' | 'Layout' | 'Brain' | 'Palette'
+  iconName: 'Smartphone' | 'Server' | 'Layout' | 'Layers' | 'Brain' | 'Cloud' | 'Palette'
   overview: LocalizedString
   capstoneProject: CapstoneProject
   mentor: Mentor

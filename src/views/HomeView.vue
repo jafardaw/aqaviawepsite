@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import HeroSection from '../components/sections/HeroSection.vue'
 import AboutSection from '../components/sections/AboutSection.vue'
-import TeamSection from '../components/sections/TeamSection.vue'
+import InternshipConceptSection from '../components/sections/InternshipConceptSection.vue'
 import TracksSection from '../components/sections/TracksSection.vue'
+import TeamSection from '../components/sections/TeamSection.vue'
+import B2BSolutionsSection from '../components/sections/B2BSolutionsSection.vue'
 import DiscountsRewardsSection from '../components/sections/DiscountsRewardsSection.vue'
 import TestimonialsSection from '../components/sections/TestimonialsSection.vue'
 import BlogSection from '../components/sections/BlogSection.vue'
@@ -11,28 +13,34 @@ import FaqSection from '../components/sections/FaqSection.vue'
 
 <template>
   <div>
-    <!-- Hero Section (3D Emblem & Company Bio) -->
+    <!-- 1. الرئيسية: Hero Section (3D Emblem & Company Bio) -->
     <HeroSection />
 
-    <!-- About Us & 4-Stage Apprenticeship Methodology -->
+    <!-- 2. عن أكافيا: About Us & Real-World Apprenticeship Model -->
     <AboutSection />
 
-    <!-- Staff Leadership & Mentors Team (With LinkedIn Links) -->
-    <TeamSection />
+    <!-- 3. ما هو التدريب الداخلي؟ The Internship Concept: Core Difference from Traditional Courses -->
+    <InternshipConceptSection />
 
-    <!-- Technical Specialization Tracks & Capstone Projects -->
+    <!-- 4. المسارات التدريبية: The 7 Technical Specialization Tracks & Capstone Projects -->
     <TracksSection />
 
-    <!-- Discounts, Referral Program & Lucky Wheel -->
+    <!-- 5. فريق الإشراف والمدربون: Staff Leadership & Mentors Team (With LinkedIn) -->
+    <TeamSection />
+
+    <!-- 6. خدمات الشركات: B2B Enterprise Software & Cloud Solutions -->
+    <B2BSolutionsSection />
+
+    <!-- 7. الهدايا والكوبونات: Discounts, Referral Program & WhatsApp Reward -->
     <DiscountsRewardsSection />
 
-    <!-- Student Success Stories & Testimonials -->
+    <!-- 8. Student Success Stories & Testimonials -->
     <TestimonialsSection />
 
-    <!-- Engineering Blog & Technical Insights Preview -->
+    <!-- 9. Engineering Blog & Technical Insights Preview -->
     <BlogSection />
 
-    <!-- Frequently Asked Questions (Interactive Accordion) -->
+    <!-- 10. الأسئلة الشائعة: Frequently Asked Questions (Interactive Accordion) -->
     <FaqSection />
   </div>
 </template>

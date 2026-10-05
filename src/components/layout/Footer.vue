@@ -22,12 +22,8 @@ const { isArabic } = useLanguage()
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
       <!-- Brand & Mission -->
       <div class="space-y-4 md:col-span-1">
-        <div class="flex items-center gap-3">
-          <img :src="logoImg" alt="Aqavia" class="w-10 h-10 rounded-full border border-[#F3CE66]/40" />
-          <div class="flex items-baseline tracking-widest font-black text-xl">
-            <span class="text-[#3B82F6]">AQ</span>
-            <span class="text-[#F3CE66]">AVIA</span>
-          </div>
+        <div class="flex items-center">
+          <img :src="logoImg" alt="AQAVIA Logo" class="h-10 w-auto object-contain rounded-lg" />
         </div>
         <p class="text-xs leading-relaxed text-slate-400">
           {{ isArabic 
@@ -55,10 +51,11 @@ const { isArabic } = useLanguage()
         </h4>
         <ul class="space-y-2 text-xs">
           <li><a href="#home" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'الرئيسية' : 'Home' }}</a></li>
-          <li><a href="#about" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'عن الشركة ومنهجيتنا' : 'About & Methodology' }}</a></li>
-          <li><a href="#tracks" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'مسارات التدريب' : 'Training Tracks' }}</a></li>
-          <li><a href="#testimonials" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'آراء الخريجين' : 'Success Stories' }}</a></li>
-          <li><a href="#blog" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'المدونة الهندسية' : 'Engineering Blog' }}</a></li>
+          <li><a href="#about" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'عن أكافيا' : 'About Us' }}</a></li>
+          <li><a href="#internship" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'ما هو التدريب الداخلي؟' : 'Internship Concept' }}</a></li>
+          <li><a href="#tracks" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'المسارات التدريبية الـ 7' : 'The 7 Tracks' }}</a></li>
+          <li><a href="#team" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'فريق الإشراف والمدربون' : 'Mentors Team' }}</a></li>
+          <li><a href="#b2b" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'خدمات الشركات (B2B)' : 'B2B Solutions' }}</a></li>
           <li><a href="#faq" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'الأسئلة الشائعة' : 'FAQs' }}</a></li>
         </ul>
       </div>

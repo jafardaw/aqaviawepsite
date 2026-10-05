@@ -8,7 +8,9 @@ import {
   Smartphone, 
   Server, 
   Layout, 
+  Layers,
   Brain, 
+  Cloud,
   Palette, 
   Rocket, 
   Clock, 
@@ -39,7 +41,9 @@ const iconComponent = computed(() => {
     case 'Smartphone': return Smartphone
     case 'Server': return Server
     case 'Layout': return Layout
+    case 'Layers': return Layers
     case 'Brain': return Brain
+    case 'Cloud': return Cloud
     case 'Palette': return Palette
     default: return Cpu
   }

@@ -8,13 +8,15 @@ export const content = {
   ar: {
     nav: {
       home: 'الرئيسية',
-      about: 'عن Aqavia',
-      team: 'فريق العمل',
-      tracks: 'مسارات التدريب',
+      about: 'عن أكافيا',
+      internship: 'ما هو التدريب الداخلي؟',
+      tracks: 'المسارات التدريبية',
+      mentors: 'فريق الإشراف والمدربون',
+      b2b: 'خدمات الشركات',
+      faq: 'الأسئلة الشائعة',
+      applyNow: 'سجّل في التدريب الداخلي',
       gifts: 'الهدايا',
       blog: 'المدونة',
-      faq: 'الأسئلة الشائعة',
-      applyNow: 'انضم للتدريب',
     },
     hero: {
       badge: '🇺🇸 صرح Aqavia الأمريكي للتدريب البرمجي والهندسي المتقدم',
@@ -43,13 +45,15 @@ export const content = {
   en: {
     nav: {
       home: 'Home',
-      about: 'About',
-      team: 'Mentors Team',
+      about: 'About Us',
+      internship: 'Internship Concept',
       tracks: 'Tracks',
-      gifts: 'Gifts',
-      blog: 'Blog',
+      mentors: 'Mentors',
+      b2b: 'B2B Solutions',
       faq: 'FAQ',
-      applyNow: 'Apply Now',
+      applyNow: 'Apply for Internship',
+      gifts: 'Rewards',
+      blog: 'Blog',
     },
     hero: {
       badge: '🇺🇸 Aqavia US Technology & Software Engineering Hub',

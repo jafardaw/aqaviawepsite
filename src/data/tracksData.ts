@@ -296,4 +296,124 @@ export const tracksData: TrackItem[] = [
     },
     seatsRemaining: 4,
   },
+  {
+    id: 'fullstack-web',
+    category: 'fullstack',
+    name: {
+      ar: 'هندسة الويب المتكاملة الشاملة (Full-Stack: Laravel & Vue 3)',
+      en: 'Enterprise Full-Stack Web Engineering (Laravel + Vue 3)',
+    },
+    badge: {
+      ar: 'المسار الأكثر تكاملاً',
+      en: 'End-to-End Mastery',
+    },
+    accentColor: '#06B6D4',
+    glowColor: 'rgba(6, 182, 212, 0.4)',
+    iconName: 'Layers',
+    overview: {
+      ar: 'الربط المعماري الكامل بين واجهات Vue 3 الحديثة ومخدمات Laravel 11 المتطورة، مع بناء أنظمة التخزين المؤقت، والمصادقة المتقدمة عبر JWT و OAuth2، وبوابات الدفع الإلكتروني.',
+      en: 'Seamlessly bridge reactive Vue 3 SPAs with high-throughput Laravel 11 backends, mastering JWT/OAuth2 security, Redis pipelines, payment gateways, and end-to-end testing.',
+    },
+    capstoneProject: {
+      name: {
+        ar: 'منصة HyperCommerce B2B العالمية وإدارة سلاسل الإمداد',
+        en: 'HyperCommerce Global B2B Marketplace & ERP Platform',
+      },
+      type: {
+        ar: 'منصة تجارة إلكترونية مؤسسية متكاملة',
+        en: 'Enterprise Full-Stack Commerce Ecosystem',
+      },
+      description: {
+        ar: 'بناء نظام B2B كامل لإدارة الموردين والطلبات المتزامنة مع تحديثات حية، بوابات دفع عالمية ومحلية، ولوحة تحكم إدارية متقدمة بتقنيات الـ Reactive State.',
+        en: 'End-to-end commerce suite supporting multi-currency transactions, live inventory syncing via WebSockets, and granular role-based administrative dashboards.',
+      },
+      techStack: ['Laravel 11', 'Vue 3', 'TypeScript', 'Pinia', 'Tailwind CSS', 'PostgreSQL', 'Stripe API'],
+    },
+    mentor: {
+      name: {
+        ar: 'م. حسام التميمي',
+        en: 'Eng. Hussam Al-Tamimi',
+      },
+      role: {
+        ar: 'Principal Full-Stack Solutions Architect',
+        en: 'Principal Full-Stack Solutions Architect',
+      },
+      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
+      experience: {
+        ar: 'خبرة 10 سنوات في قيادة المشاريع التقنية للشركات الناشئة والمؤسسات',
+        en: '10+ Years leading full-stack product engineering',
+      },
+      companyTag: 'Aqavia Senior Faculty',
+      linkedin: 'https://linkedin.com',
+    },
+    duration: {
+      ar: '14 أسبوع مكثف',
+      en: '14 Intensive Weeks',
+    },
+    level: {
+      ar: 'متوسط إلى متقدم',
+      en: 'Intermediate to Advanced',
+    },
+    seatsRemaining: 4,
+  },
+  {
+    id: 'devops-cloud',
+    category: 'devops',
+    name: {
+      ar: 'هندسة السحاب والبنية التحتية المؤتمتة (DevOps & Kubernetes)',
+      en: 'Cloud Systems, SRE & Container Orchestration (DevOps)',
+    },
+    badge: {
+      ar: 'أنظمة الإنتاج السحابي',
+      en: 'Cloud & Infrastructure',
+    },
+    accentColor: '#10B981',
+    glowColor: 'rgba(16, 185, 129, 0.4)',
+    iconName: 'Cloud',
+    overview: {
+      ar: 'أتمتة دورات نشر التطبيقات عبر الـ CI/CD Pipelines، وإدارة الحاويات بـ Docker & Kubernetes، وتطبيق معايير Infrastructure as Code (Terraform) ومراقبة الأنظمة الحية.',
+      en: 'Master automated CI/CD deployment pipelines, container orchestration with Kubernetes, Infrastructure as Code (Terraform), and full-stack observability with Prometheus and Grafana.',
+    },
+    capstoneProject: {
+      name: {
+        ar: 'بنية Titan السحابية الموزعة ومنظومة المراقبة الذاتية',
+        en: 'Titan Resilient Cloud Infrastructure & Auto-Scaling Cluster',
+      },
+      type: {
+        ar: 'بنية تحتية سحابية عالية الإتاحة (High Availability SRE)',
+        en: 'Zero-Downtime Multi-Region Cloud Architecture',
+      },
+      description: {
+        ar: 'تصميم وتشغيل كلاستر Kubernetes متعدد المناطق مع التوسعة التلقائية (Auto-scaling)، ومراقبة مؤشرات الأداء الحية واكتشاف الأعطال ومعالجتها تلقائياً.',
+        en: 'Architecting a zero-downtime multi-node K8s cluster with automated failover, blue-green deployment pipelines, and centralized distributed tracing.',
+      },
+      techStack: ['Docker', 'Kubernetes', 'AWS', 'Terraform', 'GitHub Actions', 'Prometheus', 'Grafana'],
+    },
+    mentor: {
+      name: {
+        ar: 'م. ديفيد تشين',
+        en: 'David Chen',
+      },
+      role: {
+        ar: 'Principal SRE & Cloud Architect',
+        en: 'Principal SRE & Cloud Architect',
+      },
+      avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80',
+      experience: {
+        ar: 'خبرة 12 عاماً في إدارة البنى السحابية العملاقة وموثوقية الأنظمة',
+        en: '12+ Years managing high-throughput cloud clusters',
+      },
+      companyTag: 'Ex-AWS Solutions Architect',
+      linkedin: 'https://linkedin.com',
+    },
+    duration: {
+      ar: '12 أسبوع مكثف',
+      en: '12 Intensive Weeks',
+    },
+    level: {
+      ar: 'متقدم (Advanced)',
+      en: 'Advanced',
+    },
+    seatsRemaining: 3,
+  },
 ]
