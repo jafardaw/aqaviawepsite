@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useLanguage } from '../../composables/useLanguage'
+import { useScrollTo } from '../../composables/useScrollTo'
 import { 
   Sparkles, 
   ArrowRight, 
@@ -12,6 +13,7 @@ import logoImg from '../../assets/logo.jpg'
 import gsap from 'gsap'
 
 const { t, isArabic } = useLanguage()
+const { scrollToSection } = useScrollTo()
 
 const heroContainer = ref<HTMLElement | null>(null)
 
@@ -94,7 +96,8 @@ onMounted(() => {
           <div class="gsap-fade-up flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 w-full sm:w-auto">
             <!-- Primary Gold CTA: استكشف مسارات التدريب الداخلي -->
             <a 
-              href="#tracks" 
+              href="javascript:void(0)"
+              @click.prevent="scrollToSection('tracks')" 
               class="relative group overflow-hidden px-7 py-3.5 rounded-full font-bold text-sm sm:text-base
                      bg-gradient-to-r from-[#C89B3C] via-[#F3CE66] to-[#C89B3C] text-[#050811]
                      shadow-xl shadow-[#F3CE66]/25 hover:shadow-[#F3CE66]/45 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center gap-3 cursor-pointer"
@@ -106,7 +109,8 @@ onMounted(() => {
 
             <!-- Secondary Outline Button: طلب حلول برمجية للشركات -->
             <a 
-              href="#b2b"
+              href="javascript:void(0)"
+              @click.prevent="scrollToSection('b2b')"
               class="px-6 py-3.5 rounded-full font-semibold text-sm sm:text-base
                      bg-slate-900/60 dark:bg-slate-900/60 light:bg-white/80 text-slate-200 dark:text-slate-200 light:text-slate-900
                      border border-[#12295D]/80 hover:border-[#F3CE66]/60 hover:text-[#F3CE66] backdrop-blur-md transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md"
@@ -251,7 +255,8 @@ onMounted(() => {
     <!-- Bottom Scroll Indicator -->
     <div class="absolute bottom-3 sm:bottom-6 inset-x-0 flex justify-center pointer-events-none">
       <a 
-        href="#tracks" 
+        href="javascript:void(0)"
+        @click.prevent="scrollToSection('tracks')" 
         class="pointer-events-auto flex flex-col items-center gap-1 text-slate-400 hover:text-[#F3CE66] transition-colors group cursor-pointer"
       >
         <span class="text-[10px] tracking-widest uppercase font-semibold text-slate-500 group-hover:text-[#F3CE66]">

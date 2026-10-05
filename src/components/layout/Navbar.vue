@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { useLanguage } from '../../composables/useLanguage'
 import { useTheme } from '../../composables/useTheme'
 import { useApplicationModal } from '../../composables/useApplicationModal'
@@ -17,6 +18,8 @@ import {
 } from 'lucide-vue-next'
 import logoImg from '../../assets/logo.jpg'
 
+const router = useRouter()
+const route = useRoute()
 const { t, isArabic, toggleLanguage } = useLanguage()
 const { currentTheme, toggleTheme } = useTheme()
 const { openModal } = useApplicationModal()
@@ -25,21 +28,52 @@ const isMobileMenuOpen = ref(false)
 const isTracksDropdownOpen = ref(false)
 
 interface NavLinkItem {
-  path: string
+  id: string
   key: 'home' | 'about' | 'internship' | 'tracks' | 'mentors' | 'b2b' | 'faq'
-  isRouterLink?: boolean
   hasDropdown?: boolean
 }
 
 const navLinks: NavLinkItem[] = [
-  { path: '/', key: 'home', isRouterLink: true },
-  { path: '/#about', key: 'about' },
-  { path: '/#internship', key: 'internship' },
-  { path: '/#tracks', key: 'tracks', hasDropdown: true },
-  { path: '/#team', key: 'mentors' },
-  { path: '/#b2b', key: 'b2b' },
-  { path: '/#faq', key: 'faq' },
+  { id: 'home', key: 'home' },
+  { id: 'about', key: 'about' },
+  { id: 'internship', key: 'internship' },
+  { id: 'tracks', key: 'tracks', hasDropdown: true },
+  { id: 'team', key: 'mentors' },
+  { id: 'b2b', key: 'b2b' },
+  { id: 'faq', key: 'faq' },
 ]
+
+const scrollToSection = (sectionId: string) => {
+  isMobileMenuOpen.value = false
+  isTracksDropdownOpen.value = false
+
+  if (sectionId === 'home') {
+    if (route.path !== '/') {
+      router.push('/').then(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      })
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+    return
+  }
+
+  if (route.path !== '/') {
+    router.push('/').then(() => {
+      setTimeout(() => {
+        const el = document.getElementById(sectionId)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 150)
+    })
+  } else {
+    const el = document.getElementById(sectionId)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+}
 </script>
 
 <template>
@@ -52,16 +86,21 @@ const navLinks: NavLinkItem[] = [
              transition-all duration-300 hover:border-[#F3CE66]/45"
       style="box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px 0 rgba(243, 206, 102, 0.08);"
     >
-      <!-- Brand Logo Container (Image only, without duplicate text) -->
-      <router-link to="/" class="brand-container flex items-center group shrink-0">
+      <!-- Brand Logo Container (Image only, smoothly scrolls home) -->
+      <a 
+        href="javascript:void(0)"
+        @click.prevent="scrollToSection('home')" 
+        class="brand-container flex items-center group shrink-0 cursor-pointer"
+        title="AQAVIA"
+      >
         <img 
           :src="logoImg" 
           alt="AQAVIA Logo" 
           class="h-10 w-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105" 
         />
-      </router-link>
+      </a>
 
-      <!-- Desktop Navigation Links -->
+      <!-- Desktop Navigation Links (SPA smooth scrolling to prevent 404) -->
       <div class="hidden lg:flex items-center gap-1 xl:gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/40 dark:bg-slate-900/60 light:bg-slate-100/80 border border-white/5">
         <template v-for="link in navLinks" :key="link.key">
           <!-- Tracks link with dropdown -->
@@ -71,15 +110,16 @@ const navLinks: NavLinkItem[] = [
             @mouseenter="isTracksDropdownOpen = true"
             @mouseleave="isTracksDropdownOpen = false"
           >
-            <a 
-              :href="link.path"
+            <button 
+              type="button"
+              @click="scrollToSection('tracks')"
               class="relative inline-flex items-center gap-1 px-3 py-1.5 text-xs xl:text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 
-                     hover:text-[#F3CE66] transition-colors duration-200 rounded-full hover:bg-white/5 group"
+                     hover:text-[#F3CE66] transition-colors duration-200 rounded-full hover:bg-white/5 group cursor-pointer"
             >
               <span>{{ t.nav[link.key] }}</span>
               <ChevronDown class="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:rotate-180 transition-transform duration-200" />
               <span class="absolute bottom-1 inset-x-3 h-0.5 bg-gradient-to-r from-transparent via-[#F3CE66] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </a>
+            </button>
 
             <!-- Tracks Hover Dropdown Menu (7 Tracks) -->
             <transition
@@ -103,9 +143,9 @@ const navLinks: NavLinkItem[] = [
                   <a 
                     v-for="track in tracksData" 
                     :key="track.id"
-                    :href="`/#tracks`"
-                    @click="isTracksDropdownOpen = false"
-                    class="flex items-center justify-between px-3 py-2 rounded-xl text-xs text-slate-300 hover:text-white hover:bg-white/10 transition-colors group/item"
+                    href="javascript:void(0)"
+                    @click.prevent="scrollToSection('tracks')"
+                    class="flex items-center justify-between px-3 py-2 rounded-xl text-xs text-slate-300 hover:text-white hover:bg-white/10 transition-colors group/item cursor-pointer"
                   >
                     <span class="truncate max-w-[190px] font-medium group-hover/item:text-[#F3CE66]">
                       {{ isArabic ? track.name.ar : track.name.en }}
@@ -120,27 +160,17 @@ const navLinks: NavLinkItem[] = [
             </transition>
           </div>
 
-          <!-- Router Link -->
-          <router-link 
-            v-else-if="link.isRouterLink"
-            :to="link.path"
-            class="relative px-3 py-1.5 text-xs xl:text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 
-                   hover:text-[#F3CE66] transition-colors duration-200 rounded-full hover:bg-white/5 group"
-          >
-            {{ t.nav[link.key] }}
-            <span class="absolute bottom-1 inset-x-3 h-0.5 bg-gradient-to-r from-transparent via-[#F3CE66] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </router-link>
-
-          <!-- Standard Anchor Link -->
-          <a 
+          <!-- Standard Section Scroll Button -->
+          <button 
             v-else
-            :href="link.path"
+            type="button"
+            @click="scrollToSection(link.id)"
             class="relative px-3 py-1.5 text-xs xl:text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 
-                   hover:text-[#F3CE66] transition-colors duration-200 rounded-full hover:bg-white/5 group"
+                   hover:text-[#F3CE66] transition-colors duration-200 rounded-full hover:bg-white/5 group cursor-pointer"
           >
             {{ t.nav[link.key] }}
             <span class="absolute bottom-1 inset-x-3 h-0.5 bg-gradient-to-r from-transparent via-[#F3CE66] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </a>
+          </button>
         </template>
       </div>
 
@@ -211,24 +241,15 @@ const navLinks: NavLinkItem[] = [
         class="pointer-events-auto lg:hidden mt-3 p-4 rounded-3xl bg-[#060813]/95 backdrop-blur-2xl border border-[#F3CE66]/30 shadow-2xl space-y-3"
       >
         <div class="flex flex-col space-y-1">
-          <template v-for="link in navLinks" :key="link.key">
-            <router-link
-              v-if="link.isRouterLink"
-              :to="link.path"
-              @click="isMobileMenuOpen = false"
-              class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:text-[#F3CE66] hover:bg-white/5 transition-all text-start"
-            >
-              {{ t.nav[link.key] }}
-            </router-link>
-            <a 
-              v-else
-              :href="link.path"
-              @click="isMobileMenuOpen = false"
-              class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:text-[#F3CE66] hover:bg-white/5 transition-all text-start"
-            >
-              {{ t.nav[link.key] }}
-            </a>
-          </template>
+          <button
+            v-for="link in navLinks"
+            :key="link.key"
+            type="button"
+            @click="scrollToSection(link.id)"
+            class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:text-[#F3CE66] hover:bg-white/5 transition-all text-start cursor-pointer w-full"
+          >
+            {{ t.nav[link.key] }}
+          </button>
         </div>
         <div class="pt-3 border-t border-slate-800">
           <button 

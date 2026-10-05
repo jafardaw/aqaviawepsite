@@ -19,6 +19,10 @@ const routes = [
     name: 'article-detail',
     component: ArticleDetailView,
   },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/',
+  },
 ]
 
 export const router = createRouter({

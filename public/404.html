@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>AQAVIA | جاري التحويل</title>
+  <script>
+    var path = window.location.pathname;
+    var repoBase = '/aqaviawepsite/';
+    if (path.indexOf(repoBase) === 0) {
+      var subPath = path.slice(repoBase.length);
+      window.location.replace(repoBase + (subPath ? '#/' + subPath : ''));
+    } else {
+      window.location.replace('/aqaviawepsite/');
+    }
+  </script>
+</head>
+<body style="background-color: #03050B; color: #F3CE66; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+  <div style="text-align: center;">
+    <h2>جاري تحويلك إلى موقع أكافيا...</h2>
+    <p style="color: #94A3B8;">Redirecting to AQAVIA...</p>
+    <a href="/aqaviawepsite/" style="color: #F3CE66; text-decoration: underline;">اضغط هنا إذا لم يتم التحويل تلقائياً</a>
+  </div>
+</body>
+</html>

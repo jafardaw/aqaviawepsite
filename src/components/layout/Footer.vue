@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useLanguage } from '../../composables/useLanguage'
+import { useScrollTo } from '../../composables/useScrollTo'
 import logoImg from '../../assets/logo.jpg'
 import { 
   Linkedin, 
@@ -13,6 +14,7 @@ import {
 } from 'lucide-vue-next'
 
 const { isArabic } = useLanguage()
+const { scrollToSection } = useScrollTo()
 
 const socialLinks = [
   { name: 'Facebook', url: 'https://facebook.com', icon: Facebook, color: '#1877F2' },
@@ -81,14 +83,14 @@ const whatsappUrl = 'https://wa.me/963988588859'
           {{ isArabic ? 'روابط سريعة' : 'Quick Links' }}
         </h4>
         <ul class="space-y-2 text-xs">
-          <li><a href="#home" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'الرئيسية' : 'Home' }}</a></li>
-          <li><a href="#internship" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'ما هو التدريب الداخلي؟' : 'Internship Concept' }}</a></li>
-          <li><a href="#methodology" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'منهجية وسير التدريب' : 'Training Methodology' }}</a></li>
-          <li><a href="#about" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'عن أكافيا' : 'About AQAVIA' }}</a></li>
-          <li><a href="#tracks" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'المسارات التدريبية الـ 7' : 'The 7 Tracks' }}</a></li>
-          <li><a href="#team" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'فريق الإشراف والمدربون' : 'Mentors Team' }}</a></li>
-          <li><a href="#b2b" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'خدمات الشركات (B2B)' : 'B2B Solutions' }}</a></li>
-          <li><a href="#faq" class="hover:text-[#F3CE66] transition-colors">{{ isArabic ? 'الأسئلة الشائعة' : 'FAQs' }}</a></li>
+          <li><a href="javascript:void(0)" @click.prevent="scrollToSection('home')" class="hover:text-[#F3CE66] transition-colors cursor-pointer">{{ isArabic ? 'الرئيسية' : 'Home' }}</a></li>
+          <li><a href="javascript:void(0)" @click.prevent="scrollToSection('internship')" class="hover:text-[#F3CE66] transition-colors cursor-pointer">{{ isArabic ? 'ما هو التدريب الداخلي؟' : 'Internship Concept' }}</a></li>
+          <li><a href="javascript:void(0)" @click.prevent="scrollToSection('methodology')" class="hover:text-[#F3CE66] transition-colors cursor-pointer">{{ isArabic ? 'منهجية وسير التدريب' : 'Training Methodology' }}</a></li>
+          <li><a href="javascript:void(0)" @click.prevent="scrollToSection('about')" class="hover:text-[#F3CE66] transition-colors cursor-pointer">{{ isArabic ? 'عن أكافيا' : 'About AQAVIA' }}</a></li>
+          <li><a href="javascript:void(0)" @click.prevent="scrollToSection('tracks')" class="hover:text-[#F3CE66] transition-colors cursor-pointer">{{ isArabic ? 'المسارات التدريبية الـ 7' : 'The 7 Tracks' }}</a></li>
+          <li><a href="javascript:void(0)" @click.prevent="scrollToSection('team')" class="hover:text-[#F3CE66] transition-colors cursor-pointer">{{ isArabic ? 'فريق الإشراف والمدربون' : 'Mentors Team' }}</a></li>
+          <li><a href="javascript:void(0)" @click.prevent="scrollToSection('b2b')" class="hover:text-[#F3CE66] transition-colors cursor-pointer">{{ isArabic ? 'خدمات الشركات (B2B)' : 'B2B Solutions' }}</a></li>
+          <li><a href="javascript:void(0)" @click.prevent="scrollToSection('faq')" class="hover:text-[#F3CE66] transition-colors cursor-pointer">{{ isArabic ? 'الأسئلة الشائعة' : 'FAQs' }}</a></li>
         </ul>
       </div>
 

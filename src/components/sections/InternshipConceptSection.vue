@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useLanguage } from '../../composables/useLanguage'
 import { useApplicationModal } from '../../composables/useApplicationModal'
+import { useScrollTo } from '../../composables/useScrollTo'
 import { 
   AlertTriangle, 
   CheckCircle2, 
@@ -16,6 +17,7 @@ import {
 
 const { isArabic } = useLanguage()
 const { openModal } = useApplicationModal()
+const { scrollToSection } = useScrollTo()
 
 const comparisonAxes = [
   {
@@ -255,7 +257,8 @@ const comparisonAxes = [
 
       <div class="flex items-center gap-3 shrink-0">
         <a 
-          href="#tracks"
+          href="javascript:void(0)"
+          @click.prevent="scrollToSection('tracks')"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm
                  bg-gradient-to-r from-[#C89B3C] via-[#F3CE66] to-[#C89B3C] text-[#050811]
                  shadow-lg shadow-[#F3CE66]/20 hover:shadow-[#F3CE66]/40 hover:scale-105 active:scale-95 transition-all cursor-pointer"
