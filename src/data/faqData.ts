@@ -5,60 +5,48 @@ export const faqData: FaqItem[] = [
     id: 'f1',
     category: 'general',
     question: {
-      ar: 'ما الذي يميز التدريب الداخلي في Aqavia عن الدورات المنتشرة على الإنترنت؟',
-      en: 'What distinguishes Aqavia internal training from typical online courses?',
+      ar: 'هل التدريب أونلاين أم حضوري؟',
+      en: 'Is the training conducted online or in-person?',
     },
     answer: {
-      ar: 'في Aqavia لا نعتمد على الفيديوهات المسجلة أو التطبيقات السطحية (To-Do Lists). التدريب قائم على نظام الـ Apprenticeship المعتمد في الشركات العالمية: تعمل على مشروع إنتاجي ضخم من الصفر، وتمر بدورات عمل حقيقية (Agile Sprints)، مع مراجعة كود فردية 1-on-1 لكل سطر كود ترفعه، بالإضافة لتطبيق مبادئ Clean Architecture و SOLID التي تبحث عنها الشركات.',
-      en: 'At Aqavia, we do not rely on pre-recorded lectures or superficial todo-apps. The experience follows the proven Silicon Valley apprenticeship model: you build a high-scale production system from scratch in Agile sprints, guided by weekly 1-on-1 PR reviews focusing strictly on Clean Architecture, scalability, and test coverage.',
+      ar: 'التدريب أونلاين 100% عبر جلسات واجتماعات تفاعلية وأدوات إدارة مهام مستمرة، مما يتيح لك المشاركة من أي مكان في العالم.',
+      en: 'The training is 100% online through interactive live sessions, daily standups, and structured project management tools, enabling you to participate from anywhere in the world.',
     },
   },
   {
     id: 'f2',
-    category: 'technical',
+    category: 'general',
     question: {
-      ar: 'هل التدريب حضوري أم عن بعد (Remote)؟',
-      en: 'Is the training conducted remotely or in-person?',
+      ar: 'هل التدريب مجاني؟',
+      en: 'Is the training program free?',
     },
     answer: {
-      ar: 'التدريب متاح بالكامل عن بعد (Interactive Live Remote) بأسلوب يحاكي بيئات العمل في الشركات الأمريكية والعالمية. يتم التواصل والمتابعة عبر قنوات برمجية مخصصة، واجتماعات دورية، واستعراضات أسبوعية للكود عبر Git و GitHub.',
-      en: 'The internship is 100% interactive remote, simulating distributed Silicon Valley engineering teams. Mentorship happens through dedicated dev channels, synchronous standups, and rigorous GitHub PR reviews.',
+      ar: 'التدريب رمزي التكلفة لتغطية نفقات المتابعة الهندسية والبنية التحتية، والتفاصيل محددة بالكامل داخل استمارة التسجيل.',
+      en: 'The training has a nominal operational fee to cover senior engineering mentorship, code reviews, and cloud infrastructure expenses. Full pricing details are clearly specified inside the registration form.',
     },
   },
   {
     id: 'f3',
     category: 'technical',
     question: {
-      ar: 'كيف تتم مراجعة الكود (Code Review) أسبوعياً؟',
-      en: 'How does the weekly 1-on-1 Code Review work?',
+      ar: 'أنا مبتدئ تماماً، هل أسجل في مسارات البرمجة؟',
+      en: 'I am a complete beginner, can I enroll in programming tracks?',
     },
     answer: {
-      ar: 'تقوم برفع عملك عبر Pull Request على مستودع GitHub مخصص لمشروعك. يقوم المهندس المشرف بفحص الكود سطر بسطر، وتوجيهك لإعادة الهيكلة (Refactoring)، وتطبيق معايير الأمان والأداء، وتقديم تغذية راجعة تقنية دقيقة كما يحدث في كبرى الشركات.',
-      en: 'You submit your code via Pull Requests on your dedicated enterprise repo. Your senior mentor reviews each commit line-by-line, recommending architectural refactoring, performance optimizations, and design pattern improvements.',
+      ar: 'لا؛ المسارات التقنية مخصصة لمن أنهى الأساسيات أو الدورات النظرية ويحتاج تطبيقاً ومشاريع. بينما يمكن لجميع المبتدئين التسجيل في مسار الهندسة المعمارية لأنه يبدأ من الصفر التام.',
+      en: 'No; our software engineering tracks are specifically designed for candidates who have completed foundational syntax or theory courses and need practical project experience. However, complete beginners are welcome to enroll in the Comprehensive Architectural Engineering track which starts from ground zero.',
     },
   },
   {
     id: 'f4',
     category: 'career',
     question: {
-      ar: 'هل يؤهلني هذا التدريب للحصول على عمل عن بعد مع شركات دولية؟',
-      en: 'Will this qualify me for international remote engineering roles?',
+      ar: 'ماذا أحصل بعد إنهاء التدريب؟',
+      en: 'What do I receive upon completing the internship?',
     },
     answer: {
-      ar: 'نعم بكل تأكيد. الهدف الأول لشركة Aqavia الأمريكية هو جسر الفجوة بين المطورين وسوق العمل الدولي. مشاريع التخرج مبنية بمواصفات الإنتاج الحقيقية، ومع نهاية التدريب ستحصل على كود مصقول منشور، وسيرة ذاتية هندسية احترافية، وتدريب على مقابلات الـ System Design.',
-      en: 'Absolutely. Aqavia’s primary mission is bridging talented engineers into high-paying global remote teams. You graduate with a battle-tested enterprise repo on your GitHub, an optimized technical CV, and proven system design fluency.',
-    },
-  },
-  {
-    id: 'f5',
-    category: 'general',
-    question: {
-      ar: 'ما هي متطلبات القبول في مسارات التدريب؟',
-      en: 'What are the admission requirements for the tracks?',
-    },
-    answer: {
-      ar: 'نطلب معرفة بأساسيات البرمجة (مثل مفاهيم OOP والمتغيرات وحلقات التكرار في أي لغة)، وشغفاً حقيقياً بالالتزام وتخصيص الوقت الكافي أسبوعياً لبناء المشاريع والتطوير المستمر. نقوم بإجراء تقييم أولي سريع لتحديد مستواك ومساعدتك في اختيار المسار الأنسب.',
-      en: 'We require foundational programming literacy (OOP basics, variables, and logic in any language) alongside high dedication and commitment to weekly project sprints. An initial technical placement assessment helps place you in the ideal track.',
+      ar: 'مشاريع برمجية حقيقية تدعم معرض أعمالك (Portfolio/GitHub)، شهادة تدريب داخلي معتمدة من أكافيا، وجاهزية لاجتياز المقابلات التقنية.',
+      en: 'Production-ready projects published to your Portfolio & GitHub, an accredited official Internship Completion Certificate from AQAVIA LLC, and battle-tested readiness to ace technical system interviews.',
     },
   },
 ]
